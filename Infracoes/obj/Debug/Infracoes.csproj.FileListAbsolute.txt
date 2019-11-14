@@ -1,0 +1,171 @@
+C:\VS Projects\Infracoes\Infracoes\bin\Infracoes.dll.config
+C:\VS Projects\Infracoes\Infracoes\bin\Infracoes.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Infracoes.pdb
+C:\VS Projects\Infracoes\Infracoes\bin\Antlr3.Runtime.dll
+C:\VS Projects\Infracoes\Infracoes\bin\EntityFramework.dll
+C:\VS Projects\Infracoes\Infracoes\bin\EntityFramework.SqlServer.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Core.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Cookies.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Facebook.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Google.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.OAuth.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Twitter.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Web.Infrastructure.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Newtonsoft.Json.dll
+C:\VS Projects\Infracoes\Infracoes\bin\Owin.dll
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.Helpers.dll
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.Mvc.dll
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.Optimization.dll
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.Razor.dll
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.WebPages.Deployment.dll
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.WebPages.dll
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.WebPages.Razor.dll
+C:\VS Projects\Infracoes\Infracoes\bin\WebGrease.dll
+C:\VS Projects\Infracoes\Infracoes\bin\EntityFramework.xml
+C:\VS Projects\Infracoes\Infracoes\bin\EntityFramework.SqlServer.xml
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.Helpers.xml
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.Mvc.xml
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.Optimization.xml
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.Razor.xml
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.WebPages.xml
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.WebPages.Deployment.xml
+C:\VS Projects\Infracoes\Infracoes\bin\System.Web.WebPages.Razor.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Newtonsoft.Json.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Antlr3.Runtime.pdb
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Core.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Facebook.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Cookies.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.OAuth.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Google.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Twitter.xml
+C:\VS Projects\Infracoes\Infracoes\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\VS Projects\Infracoes\Infracoes\obj\Debug\Infracoes.csprojResolveAssemblyReference.cache
+C:\VS Projects\Infracoes\Infracoes\obj\Debug\Infracoes.dll
+C:\VS Projects\Infracoes\Infracoes\obj\Debug\Infracoes.pdb
+C:\VS Projects\Infracoes\Infracoes\bin\jQuery.Validation.Unobtrusive.Native.dll
+D:\Documents\Infracoes\Infracoes\bin\Infracoes.dll.config
+D:\Documents\Infracoes\Infracoes\bin\Infracoes.dll
+D:\Documents\Infracoes\Infracoes\bin\Infracoes.pdb
+D:\Documents\Infracoes\Infracoes\bin\Antlr3.Runtime.dll
+D:\Documents\Infracoes\Infracoes\bin\EntityFramework.dll
+D:\Documents\Infracoes\Infracoes\bin\EntityFramework.SqlServer.dll
+D:\Documents\Infracoes\Infracoes\bin\jQuery.Validation.Unobtrusive.Native.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Google.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Web.Infrastructure.dll
+D:\Documents\Infracoes\Infracoes\bin\Newtonsoft.Json.dll
+D:\Documents\Infracoes\Infracoes\bin\Owin.dll
+D:\Documents\Infracoes\Infracoes\bin\System.Web.Helpers.dll
+D:\Documents\Infracoes\Infracoes\bin\System.Web.Mvc.dll
+D:\Documents\Infracoes\Infracoes\bin\System.Web.Optimization.dll
+D:\Documents\Infracoes\Infracoes\bin\System.Web.Razor.dll
+D:\Documents\Infracoes\Infracoes\bin\System.Web.WebPages.Deployment.dll
+D:\Documents\Infracoes\Infracoes\bin\System.Web.WebPages.dll
+D:\Documents\Infracoes\Infracoes\bin\System.Web.WebPages.Razor.dll
+D:\Documents\Infracoes\Infracoes\bin\WebGrease.dll
+D:\Documents\Infracoes\Infracoes\bin\EntityFramework.xml
+D:\Documents\Infracoes\Infracoes\bin\EntityFramework.SqlServer.xml
+D:\Documents\Infracoes\Infracoes\bin\System.Web.Helpers.xml
+D:\Documents\Infracoes\Infracoes\bin\System.Web.Mvc.xml
+D:\Documents\Infracoes\Infracoes\bin\System.Web.Razor.xml
+D:\Documents\Infracoes\Infracoes\bin\System.Web.WebPages.xml
+D:\Documents\Infracoes\Infracoes\bin\System.Web.WebPages.Deployment.xml
+D:\Documents\Infracoes\Infracoes\bin\System.Web.WebPages.Razor.xml
+D:\Documents\Infracoes\Infracoes\bin\System.Web.Optimization.xml
+D:\Documents\Infracoes\Infracoes\bin\Newtonsoft.Json.xml
+D:\Documents\Infracoes\Infracoes\bin\Antlr3.Runtime.pdb
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Google.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Documents\Infracoes\Infracoes\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Documents\Infracoes\Infracoes\obj\Debug\Infracoes.csprojAssemblyReference.cache
+D:\Documents\Infracoes\Infracoes\obj\Debug\Infracoes.csproj.CoreCompileInputs.cache
+D:\Documents\Infracoes\Infracoes\obj\Debug\Infracoes.csproj.CopyComplete
+D:\Documents\Infracoes\Infracoes\obj\Debug\Infracoes.dll
+D:\Documents\Infracoes\Infracoes\obj\Debug\Infracoes.pdb
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Infracoes.dll.config
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Infracoes.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Infracoes.pdb
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Antlr3.Runtime.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\EntityFramework.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\EntityFramework.SqlServer.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\jQuery.Validation.Unobtrusive.Native.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Google.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Web.Infrastructure.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Newtonsoft.Json.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Owin.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.Helpers.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.Mvc.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.Optimization.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.Razor.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.WebPages.Deployment.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.WebPages.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.WebPages.Razor.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\WebGrease.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\EntityFramework.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\EntityFramework.SqlServer.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.Helpers.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.Mvc.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.Razor.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.WebPages.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.WebPages.Deployment.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.WebPages.Razor.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\System.Web.Optimization.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Newtonsoft.Json.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Antlr3.Runtime.pdb
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Google.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\obj\Debug\Infracoes.csprojAssemblyReference.cache
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\obj\Debug\Infracoes.csproj.CopyComplete
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\obj\Debug\Infracoes.dll
+D:\Documents\Desenvolvimento\Infracoes\Infracoes\obj\Debug\Infracoes.pdb

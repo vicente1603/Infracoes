@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Index.cshtml";
+    if (Session["idUsuario"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class=" panel panel-primary">
+                <div class="panel-heading text-center">
+                    Seja bem-vindo ao Sistema de Infrações
+                </div>
+                <div class="panel-body text-center">
+                    <img class="logo" alt="Logo SSP" src="@Url.Content("~/Content/img/ssp-logo-sem-descricao.png")" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

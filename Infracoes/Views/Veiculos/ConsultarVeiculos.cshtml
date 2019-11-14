@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Index.cshtml";
+    if (Session["idUsuario"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<div data-ng-controller="VeiculosController as veiculos">
+
+    @Html.Partial("~/Views/Veiculos/Partial/FiltroVeiculos.cshtml")
+
+    <div class="alert alert-danger" data-ng-show="veiculos.erros">
+        <button type="button" class="close" data-ng-click="veiculos.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+        <span data-ng-repeat="erro in veiculos.erros" data-ng-bind="erro"></span>
+    </div>
+    <div class="alert alert-success" data-ng-show="veiculos.info">
+        <button type="button" class="close" data-ng-click="veiculos.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+        <span data-ng-bind="veiculos.info"></span>
+    </div>
+
+    <div class="panel panel-white">
+        <div class="panel-heading"><i class="fa fa-list"></i>&nbsp;Veículos</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <button class="btn btn-success"
+                        data-app-modal-target="veiculos.modal.dados"
+                        data-ng-click="veiculos.novo()">
+                    Adicionar&nbsp;
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Placa</th>
+                            <th>Uf</th>
+                            <th>Infrações</th>
+                            <th>Modelo</th>
+                            <th>Proprietário</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-show="veiculos.cadastrados.length == 0">
+                            <td colspan="2">
+                                <em>Nenhum Veículo encontrado.</em>
+                            </td>
+                        </tr>
+                        <tr data-ng-repeat="veiculo in veiculos.cadastrados">
+                            <td data-ng-bind="veiculo.placa"></td>
+                            <td data-ng-bind="veiculo.uf"></td>
+                            <td>
+                                <button class="btn btn-info btn-sm fa fa-list"
+                                        data-ng-click="veiculos.selecionar(veiculo); veiculos.limparMensagens()"
+                                        data-app-modal-target="veiculos.modal.exibirInfracoes"></button>
+                            </td>
+                            <td data-ng-bind="veiculo.descricaoModelo"></td>
+                            <td data-ng-bind="veiculo.cpfProprietario"></td>
+
+                            <td class="td-col-4 text-center">
+                                <button class="btn btn-warning btn-sm"
+                                        data-ng-click="veiculos.selecionar(veiculo); veiculos.limparMensagens()"
+                                        data-app-modal-target="veiculos.modal.dados">
+                                    Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm"
+                                        data-ng-click="veiculos.selecionar(veiculo); veiculos.limparMensagens()"
+                                        data-app-modal-target="veiculos.modal.confirmarRemover">
+                                    Remover
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr data-ng-hide="veiculos.cadastrados.length == 0">
+                            <td colspan="6"
+                                class="text-center"
+                                data-app-paginacao="veiculos.filtro.paginacao"
+                                data-app-paginacao-limite="10"
+                                data-app-paginacao-iniciar="veiculos.consultar(true)"
+                                data-app-paginacao-atualizar="veiculos.consultar(false)"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Veiculos/Modal/ModalCadastrarVeiculo.cshtml")
+    @Html.Partial("~/Views/Veiculos/Modal/ModalRemoverVeiculo.cshtml")
+    @Html.Partial("~/Views/Veiculos/Modal/ModalExibirInfracoes.cshtml")
+
+</div>
+

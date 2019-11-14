@@ -1,0 +1,37 @@
+﻿<div class="modal fade" data-app-modal="logradouros.modal.confirmarRemover" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-app-modal-dismiss="logradouros.modal.confirmarRemover"><span>&times;</span></button>
+                Remover Logradouro
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger" data-ng-show="logradouros.modal.erros.aoRemover">
+                    <button type="button" class="close" data-ng-click="logradouros.modal.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+                    <span data-ng-repeat="erro in logradouros.modal.erros.aoRemover" data-ng-bind="erro"></span>
+                </div>
+                <p>
+                    Deseja realmente remover o logradouro <strong data-ng-bind="logradouros.logradouro.cep"></strong> ?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-success"
+                        data-ng-click="logradouros.modal.remover()">
+                    <span data-ng-show="logradouros.modal.removendo"
+                          data-ng-disabled="logradouros.modal.removendo">
+                        Removendo&nbsp;<i class="fa fa-refresh fa-spin"></i>
+                    </span>
+                    <span data-ng-hide="logradouros.modal.removendo">Sim</span>
+                </button>
+                <button type="button"
+                        class="btn btn-danger"
+                        data-app-modal-dismiss="logradouros.modal.confirmarRemover">
+                    Não
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

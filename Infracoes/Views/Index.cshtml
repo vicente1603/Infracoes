@@ -1,0 +1,37 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+
+<html data-ng-app="app">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Infrações</title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor.min.css")" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    @Styles.Render("~/Styles/app-css")
+</head>
+<body data-ng-controller="AppController as app" data-ng-init="app.validarSessao()">
+    <div class="modal" data-backdrop="static" data-app-carregando>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                    <br />
+                    <h3>Carregando...</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Navbar.cshtml")
+
+
+    <div class="ng-cloak container container-body">
+        @RenderBody()
+    </div>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/vendor.min.js")"></script>
+    <script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
+    @Scripts.Render("~/Scripts/app-js")
+</body>
+</html>

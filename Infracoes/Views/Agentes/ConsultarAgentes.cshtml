@@ -1,0 +1,88 @@
+﻿@{
+    Layout = "~/Views/Index.cshtml";
+    if (Session["idUsuario"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<div data-ng-controller="AgentesController as agentes">
+
+    @Html.Partial("~/Views/Agentes/Partial/FiltroAgentes.cshtml")
+
+    <div class="alert alert-danger" data-ng-show="agentes.erros">
+        <button type="button" class="close" data-ng-click="agentes.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+        <span data-ng-repeat="erro in agentes.erros" data-ng-bind="erro"></span>
+    </div>
+    <div class="alert alert-success" data-ng-show="agentes.info">
+        <button type="button" class="close" data-ng-click="agentes.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+        <span data-ng-bind="agentes.info"></span>
+    </div>
+
+    <div class="panel panel-white">
+        <div class="panel-heading"><i class="fa fa-list"></i>&nbsp;Agentes</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <button class="btn btn-success"
+                        data-app-modal-target="agentes.modal.dados"
+                        data-ng-click="agentes.novo()">
+                    Adicionar&nbsp;
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Matrícula</th>
+                            <th>Data de Efetivação</th>
+                            <th>Tempo de Serviço (Meses)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-show="agentes.cadastrados.length == 0">
+                            <td colspan="2">
+                                <em>Nenhum Agente encontrado.</em>
+                            </td>
+                        </tr>
+                        <tr data-ng-repeat="agente in agentes.cadastrados">
+                            <td data-ng-bind="agente.nomeAgente"></td>
+                            <td data-ng-bind="agente.matricula"></td>
+                            <td data-ng-bind="agente.efetivacao"></td>
+                            <td data-ng-bind="agente.tempoServico"></td>
+
+                            <td class="td-col-4 text-center">
+                                <button class="btn btn-warning btn-sm"
+                                        data-ng-click="agentes.selecionar(agente); agentes.limparMensagens()"
+                                        data-app-modal-target="agentes.modal.dados">
+                                    Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm"
+                                        data-ng-click="agentes.selecionar(agente); agentes.limparMensagens()"
+                                        data-app-modal-target="agentes.modal.confirmarRemover">
+                                    Remover
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr data-ng-hide="agentes.cadastrados.length == 0">
+                            <td colspan="6"
+                                class="text-center"
+                                data-app-paginacao="agentes.filtro.paginacao"
+                                data-app-paginacao-limite="10"
+                                data-app-paginacao-iniciar="agentes.consultar(true)"
+                                data-app-paginacao-atualizar="agentes.consultar(false)"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Agentes/Modal/ModalCadastrarAgente.cshtml")
+    @Html.Partial("~/Views/Agentes/Modal/ModalRemoverAgente.cshtml")
+</div>
+

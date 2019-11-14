@@ -1,0 +1,97 @@
+﻿@{
+    Layout = "~/Views/Index.cshtml";
+    if (Session["idUsuario"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
+}
+
+<div data-ng-controller="ProprietariosController as proprietarios">
+
+    @Html.Partial("~/Views/Proprietarios/Partial/FiltroProprietarios.cshtml")
+
+    <div class="alert alert-danger" data-ng-show="proprietarios.erros">
+        <button type="button" class="close" data-ng-click="proprietarios.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+        <span data-ng-repeat="erro in proprietarios.erros" data-ng-bind="erro"></span>
+    </div>
+    <div class="alert alert-success" data-ng-show="proprietarios.info">
+        <button type="button" class="close" data-ng-click="proprietarios.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+        <span data-ng-bind="proprietarios.info"></span>
+    </div>
+
+    <div class="panel panel-white">
+        <div class="panel-heading"><i class="fa fa-list"></i>&nbsp;Proprietários</div>
+        <div class="panel-body">
+            <div class="form-group">
+                <button class="btn btn-success"
+                        data-app-modal-target="proprietarios.modal.dados"
+                        data-ng-click="proprietarios.nova()">
+                    Adicionar&nbsp;
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Cpf</th>
+                            <th>Data de Nascimento</th>
+                            <th>Telefone</th>
+                            <th>Veículos</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-ng-show="proprietarios.cadastrados.length == 0">
+                            <td colspan="2">
+                                <em>Nenhum proprietário encontrado.</em>
+                            </td>
+                        </tr>
+                        <tr data-ng-repeat="proprietario in proprietarios.cadastrados">
+                            <td data-ng-bind="proprietario.nomeProprietario"></td>
+                            <td data-ng-bind="proprietario.cpfProprietario"></td>
+                            <td data-ng-bind="proprietario.dataNascimento"></td>
+                            <td data-ng-bind="proprietario.telefone"></td>
+                            <td>
+                                <button class="btn btn-info btn-sm fa fa-list"
+                                        data-ng-click="proprietarios.selecionar(proprietario); proprietarios.limparMensagens()"
+                                        data-app-modal-target="proprietarios.modal.exibirVeiculos"></button>
+                            </td>
+                            <td class="td-col-4 text-center">
+                                <button class="btn btn-warning btn-sm"
+                                        data-ng-click="proprietarios.selecionar(proprietario); proprietarios.limparMensagens()"
+                                        data-app-modal-target="proprietarios.modal.dados">
+                                    Editar
+                                </button>
+                                <button class="btn btn-danger btn-sm"
+                                        data-ng-click="proprietarios.selecionar(proprietario); proprietarios.limparMensagens()"
+                                        data-app-modal-target="proprietarios.modal.confirmarRemover">
+                                    Remover
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr data-ng-hide="proprietarios.cadastrados.length == 0">
+                            <td colspan="6"
+                                class="text-center"
+                                data-app-paginacao="proprietarios.filtro.paginacao"
+                                data-app-paginacao-limite="10"
+                                data-app-paginacao-iniciar="proprietarios.consultar(true)"
+                                data-app-paginacao-atualizar="proprietarios.consultar(false)"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    @Html.Partial("~/Views/Proprietarios/Modal/ModalCadastrarProprietario.cshtml")
+    @Html.Partial("~/Views/Proprietarios/Modal/ModalRemoverProprietario.cshtml")
+    @Html.Partial("~/Views/Proprietarios/Modal/ModalExibirVeiculos.cshtml")
+
+</div>
+
+

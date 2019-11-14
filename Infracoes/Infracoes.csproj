@@ -1,0 +1,510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3181BB97-9E7D-487B-B93C-849EF1619AEF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Infracoes</RootNamespace>
+    <AssemblyName>Infracoes</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="jQuery.Validation.Unobtrusive.Native, Version=1.1.5809.17463, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jQuery.Validation.Unobtrusive.Native.MVC5.1.3.0\lib\net45\jQuery.Validation.Unobtrusive.Native.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.0\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.0\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppStart\AppHttp.cs" />
+    <Compile Include="AppStart\Bundle\ScriptBundleConfig.cs" />
+    <Compile Include="AppStart\Bundle\StyleBundleConfig.cs" />
+    <Compile Include="AppStart\RouteConfig.cs" />
+    <Compile Include="Attributes\AutorizacaoAttribute.cs" />
+    <Compile Include="Attributes\RequiredIfAttribute.cs" />
+    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\Dbo\AgentesController.cs" />
+    <Compile Include="Controllers\Dbo\BoasVindasController.cs" />
+    <Compile Include="Controllers\Dbo\InfracoesController.cs" />
+    <Compile Include="Controllers\Dbo\LogradourosController.cs" />
+    <Compile Include="Controllers\Dbo\ModelosController.cs" />
+    <Compile Include="Controllers\Dbo\ProprietariosController.cs" />
+    <Compile Include="Controllers\Dbo\VeiculosController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Extensions\ControllerExtension.cs" />
+    <Compile Include="Extensions\EnumHelperExtension.cs" />
+    <Compile Include="Extensions\HttpContextBaseExtension.cs" />
+    <Compile Include="Extensions\MappingExtensions.cs" />
+    <Compile Include="Extensions\RedirectResultExtension.cs" />
+    <Compile Include="Models\DataModel\DbApplication.cs" />
+    <Compile Include="Models\DataModel\Dbo\Mappers\AgenteMap.cs" />
+    <Compile Include="Models\DataModel\Dbo\Mappers\InfracaoMap.cs" />
+    <Compile Include="Models\DataModel\Dbo\Mappers\LogradouroMap.cs" />
+    <Compile Include="Models\DataModel\Dbo\Mappers\ModeloMap.cs" />
+    <Compile Include="Models\DataModel\Dbo\Mappers\ProprietarioMap.cs" />
+    <Compile Include="Models\DataModel\Dbo\Mappers\VeiculoMap.cs" />
+    <Compile Include="Models\DataModel\Dbo\Queries\AgenteQuery.cs" />
+    <Compile Include="Models\DataModel\Dbo\Queries\InfracaoQuery.cs" />
+    <Compile Include="Models\DataModel\Dbo\Queries\LogradouroQuery.cs" />
+    <Compile Include="Models\DataModel\Dbo\Queries\ModeloQuery.cs" />
+    <Compile Include="Models\DataModel\Dbo\Queries\ProprietarioQuery.cs" />
+    <Compile Include="Models\DataModel\Dbo\Queries\VeiculoQuery.cs" />
+    <Compile Include="Models\DomainModel\Dbo\Agente.cs" />
+    <Compile Include="Models\DomainModel\Dbo\Infracao.cs" />
+    <Compile Include="Models\DomainModel\Dbo\Logradouro.cs" />
+    <Compile Include="Models\DomainModel\Dbo\Modelo.cs" />
+    <Compile Include="Models\DomainModel\Dbo\Proprietario.cs" />
+    <Compile Include="Models\DomainModel\Dbo\Veiculo.cs" />
+    <Compile Include="Models\LoginDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Seguranca\CriptografiaAES.cs" />
+    <Compile Include="Models\Seguranca\Token.cs" />
+    <Compile Include="Models\Usuario.cs">
+      <DependentUpon>LoginDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Validacao\ExpressaoRegular.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Agentes\AgentesCadastradosViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Agentes\AtualizarViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Agentes\CadastrarVeiculoViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Agentes\IdAgenteViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Infracoes\AtualizarInfracaoViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Infracoes\CadastrarInfracaoViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Infracoes\IdInfracaoViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Infracoes\ProdutosCadastradosViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Logradouros\AtualizarLogradouroViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Logradouros\CadastrarLogradouroViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Logradouros\IdLogradouroViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Logradouros\LogradourosCadastradosViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Modelos\AtualizarModeloViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Modelos\CadastrarModeloViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Modelos\IdModeloViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Modelos\ModelosCadastradosViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Proprietarios\AtualizarProprietarioViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Proprietarios\CadastrarProprietarioViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Proprietarios\IdProprietarioViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Proprietarios\ProprietariosCadastradosViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Veiculos\AtualizarVeiculoViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Veiculos\CadastrarVeiculoViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Veiculos\IdVeiculoViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Veiculos\VeiculosCadastradosViewModel.cs" />
+    <Compile Include="Models\ViewModel\PaginacaoViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\app\App.css" />
+    <Content Include="Content\css\app\BootstrapExtensions.css" />
+    <Content Include="Content\css\app\CustomApp.css" />
+    <Content Include="Content\css\app\NgCloak.css" />
+    <Content Include="Content\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Content\css\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_666666_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\css\vendor.min.css" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\img\carregando.gif" />
+    <Content Include="Content\img\doc-word-image.png" />
+    <Content Include="Content\img\pdf-image.png" />
+    <Content Include="Content\img\ssp-logo-sem-descricao.png" />
+    <Content Include="Content\img\ssp-logo-sm.png" />
+    <Content Include="Content\img\xls-excel-image.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Models\LoginDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LoginDataModel.edmx</DependentUpon>
+      <LastGenOutput>LoginDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LoginDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LoginDataModel.edmx</DependentUpon>
+      <LastGenOutput>LoginDataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\Controllers\AppController.js" />
+    <Content Include="Scripts\Controllers\Dbo\AgentesController.js" />
+    <Content Include="Scripts\Controllers\Dbo\InfracoesController.js" />
+    <Content Include="Scripts\Controllers\Dbo\LogradourosController.js" />
+    <Content Include="Scripts\Controllers\Dbo\ModelosController.js" />
+    <Content Include="Scripts\Controllers\Dbo\ProprietariosController.js" />
+    <Content Include="Scripts\Controllers\Dbo\VeiculosController.js" />
+    <Content Include="Scripts\Directives\Componentes\CarregandoDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\CKEditorDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\CKEditorMidiaDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\CollapseDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\CollapseTargetDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\MenuActiveDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\ModalDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\ModalDismissDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\ModalTargetDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\PaginacaoContinuaDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\PaginacaoDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\RegraAcessoDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\SpinnerDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\TabContentDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\TabDirective.js" />
+    <Content Include="Scripts\Directives\Componentes\TooltipDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\CalendarioDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\CpfDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\FileUploadDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\LowercaseDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\MascaraDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\NumericoDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\PreviewMidiaUploadDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\SetFocusDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\TelefoneDirective.js" />
+    <Content Include="Scripts\Directives\Formulario\UppercaseDirective.js" />
+    <Content Include="Scripts\Directives\Graficos\BarChartDirective.js" />
+    <Content Include="Scripts\Directives\Graficos\LineChartDirective.js" />
+    <Content Include="Scripts\Directives\Maps\GeocoderDirective.js" />
+    <Content Include="Scripts\Directives\Maps\MapsDirective.js" />
+    <Content Include="Scripts\Directives\Maps\SearchBoxDirective.js" />
+    <Content Include="Scripts\Directives\Mouse\ClickOutDirective.js" />
+    <Content Include="Scripts\Directives\Mouse\CursorTextoService.js" />
+    <Content Include="Scripts\Directives\Recaptcha\RecaptchaDirective.js" />
+    <Content Include="Scripts\Directives\Teclado\CapslockDirective.js" />
+    <Content Include="Scripts\Directives\Teclado\DigitacaoDirective.js" />
+    <Content Include="Scripts\Directives\Teclado\EnterDirective.js" />
+    <Content Include="Scripts\html5shiv.min.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Locale\pt-br.js" />
+    <Content Include="Scripts\Modules\AppModule.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\Services\App\ApiRequestService.js" />
+    <Content Include="Scripts\Services\App\BufferService.js" />
+    <Content Include="Scripts\Services\App\ColorsService.js" />
+    <Content Include="Scripts\Services\App\GlobalService.js" />
+    <Content Include="Scripts\Services\Dbo\AgenteService.js" />
+    <Content Include="Scripts\Services\Dbo\InfracaoService.js" />
+    <Content Include="Scripts\Services\Dbo\LogradouroService.js" />
+    <Content Include="Scripts\Services\Dbo\ModeloService.js" />
+    <Content Include="Scripts\Services\Dbo\ProprietarioService.js" />
+    <Content Include="Scripts\Services\Dbo\VeiculoService.js" />
+    <Content Include="Scripts\vendor.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Index.cshtml" />
+    <Content Include="Views\Veiculos\ConsultarVeiculos.cshtml" />
+    <Content Include="Views\Veiculos\Modal\ModalCadastrarVeiculo.cshtml" />
+    <Content Include="Views\Veiculos\Modal\ModalRemoverVeiculo.cshtml" />
+    <Content Include="Views\Veiculos\Partial\FiltroVeiculos.cshtml" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\Services\Administrativo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modelos\ConsultarModelos.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modelos\Modal\ModalRemoverModelo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modelos\Modal\ModalCadastrarModelo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Modelos\Partial\FiltroModelos.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Proprietarios\ConsultarProprietarios.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Proprietarios\Partial\FiltroProprietarios.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Proprietarios\Modal\ModalCadastrarProprietario.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Proprietarios\Modal\ModalRemoverProprietario.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Proprietarios\Modal\ModalExibirVeiculos.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Infracoes\ConsultarInfracoes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Infracoes\Modal\ModalCadastrarInfracao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Infracoes\Modal\ModalRemoverInfracao.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Infracoes\Partial\FiltroInfracoes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Agentes\ConsultarAgentes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Agentes\Partial\FiltroAgentes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Agentes\Modal\ModalCadastrarAgente.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Agentes\Modal\ModalRemoverAgente.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Logradouros\Modal\ModalCadastrarLogradouro.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Logradouros\Modal\ModalRemoverLogradouro.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Logradouros\Partial\FiltroLogradouros.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Logradouros\ConsultarLogradouros.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Veiculos\Modal\ModalExibirInfracoes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BoasVindas.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Navbar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\LoginDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LoginDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\LoginDataModel.edmx.diagram">
+      <DependentUpon>LoginDataModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61114</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56933/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
