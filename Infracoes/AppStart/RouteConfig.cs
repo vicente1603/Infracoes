@@ -20,7 +20,7 @@ namespace Infracoes.AppStart
             routes.MapRoute(
                 name: "Default",
                 url:"{controller}/{action}/{id}",
-                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Views", action = "Index", id = UrlParameter.Optional }
                 );
 
             routes.MapRoute(

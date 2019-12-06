@@ -31,6 +31,7 @@
                 .then(function (response) {
                     _self.cadastradas = response.data.infracoes;
                     _self.filtro.paginacao = response.data.paginacao;
+                    console.log(response.data);
                 })
                 .catch(function (response) {
                     _self.erros = response.data;

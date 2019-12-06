@@ -1,11 +1,6 @@
 ﻿@{
     Layout = "~/Views/Index.cshtml";
-    if (Session["idUsuario"] == null)
-    {
-        Response.Redirect("~/Login/Index");
-    }
 }
-
 
 <div data-ng-controller="InfracoesController as infracoes">
 
