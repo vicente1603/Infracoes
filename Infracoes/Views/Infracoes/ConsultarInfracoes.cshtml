@@ -1,85 +1,106 @@
 ﻿@{
     Layout = "~/Views/Index.cshtml";
+    //if (Session["idUsuario"] == null)
+    //{
+    //    Response.Redirect("~/Login/Index");
+    //}
 }
 
-<div data-ng-controller="InfracoesController as infracoes">
+<div class="container-fluid" data-ng-controller="InfracoesController as infracoes">
 
-    @Html.Partial("~/Views/Infracoes/Partial/FiltroInfracoes.cshtml")
-
-    <div class="alert alert-danger" data-ng-show="infracoes.erros">
-        <button type="button" class="close" data-ng-click="infracoes.limparMensagens()"><span aria-hidden="true">&times;</span></button>
-        <span data-ng-repeat="erro in infracoes.erros" data-ng-bind="erro"></span>
-    </div>
-    <div class="alert alert-success" data-ng-show="infracoes.info">
-        <button type="button" class="close" data-ng-click="infracoes.limparMensagens()"><span aria-hidden="true">&times;</span></button>
-        <span data-ng-bind="infracoes.info"></span>
-    </div>
-
-    <div class="panel panel-white">
-        <div class="panel-heading"><i class="fa fa-list"></i>&nbsp;Infrações</div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Infrações</h4>
+        </div>
         <div class="panel-body">
-            <div class="form-group">
-                <button class="btn btn-success"
-                        data-app-modal-target="infracoes.modal.dados"
-                        data-ng-click="infracoes.nova()">
-                    Adicionar&nbsp;
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
+
+            @Html.Partial("~/Views/Infracoes/Partial/FiltroInfracoes.cshtml")
+
+            <div class="alert alert-danger" data-ng-show="infracoes.erros">
+                <button type="button" class="close" data-ng-click="infracoes.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+                <span data-ng-repeat="erro in infracoes.erros" data-ng-bind="erro"></span>
+            </div>
+            <div class="alert alert-success" data-ng-show="infracoes.info">
+                <button type="button" class="close" data-ng-click="infracoes.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+                <span data-ng-bind="infracoes.info"></span>
             </div>
 
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Descrição da Infração</th>
-                            <th>Velocidade (Km/h)</th>
-                            <th>Veículo</th>
-                            <th>Agente (Matrícula)</th>
-                            <th>Local da Infração (Cep)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-ng-show="infracoes.cadastradas.length == 0">
-                            <td colspan="2">
-                                <em>Nenhuma infração encontrada.</em>
-                            </td>
-                        </tr>
-                        <tr data-ng-repeat="infracao in infracoes.cadastradas">
-                            <td data-ng-bind="infracao.descricao"></td>
-                            <td data-ng-bind="infracao.velocidade"></td>
-                            <td data-ng-bind="infracao.placaVeiculo"></td>
-                            <td data-ng-bind="infracao.nomeAgente"></td>
-                            <td data-ng-bind="infracao.cepLogradouro"></td>
+            <div class="panel panel-default">
+                <div class="panel-body">
 
-                            <td class="td-col-4 text-center">
-                                <button class="btn btn-warning btn-sm"
-                                        data-ng-click="infracoes.selecionar(infracao); infracoes.limparMensagens()"
-                                        data-app-modal-target="infracoes.modal.dados">
-                                    Editar
-                                </button>
-                                <button class="btn btn-danger btn-sm"
-                                        data-ng-click="infracoes.selecionar(infracao); infracoes.limparMensagens()"
-                                        data-app-modal-target="infracoes.modal.confirmarRemover">
-                                    Remover
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr data-ng-hide="infracoes.cadastradas.length == 0">
-                            <td colspan="6"
-                                class="text-center"
-                                data-app-paginacao="infracoes.filtro.paginacao"
-                                data-app-paginacao-limite="10"
-                                data-app-paginacao-iniciar="infracoes.consultar(true)"
-                                data-app-paginacao-atualizar="infracoes.consultar(false)"></td>
-                        </tr>
-                    </tfoot>
-                </table>
+                    <div class="form-group">
+                        <button class="btn btn-success"
+                                data-app-modal-target="infracoes.modal.dados"
+                                data-ng-click="infracoes.novo()">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            Nova
+                        </button>
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Descrição da Infração</th>
+                                <th>Velocidade (Km/h)</th>
+                                <th>Veículo</th>
+                                <th>Agente (Matrícula)</th>
+                                <th>Local da Infração (Cep)</th>
+                                <th class="table-col-3 text-center">Ações</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-show="infracoes.cadastradas.length == 0">
+                                <td colspan="2">
+                                    <em>Nenhum Agente encontrado.</em>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="no-border" data-ng-repeat="infracao in infracoes.cadastradas">
+                            <tr>
+                                <td data-ng-bind="infracao.descricao"></td>
+                                <td data-ng-bind="infracao.velocidade"></td>
+                                <td data-ng-bind="infracao.placaVeiculo"></td>
+                                <td data-ng-bind="infracao.nomeAgente"></td>
+                                <td data-ng-bind="infracao.cepLogradouro"></td>
+
+                                <td class="text-center">
+                                    <button type="button"
+                                            class="btn btn-warning"
+                                            data-app-tooltip="Editar"
+                                            data-ng-click="infracoes.selecionar(infracao); infracoes.limparMensagens()"
+                                            data-app-modal-target="infracoes.modal.dados">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+
+                                    <button type="button"
+                                            class="btn btn-danger"
+                                            data-app-tooltip="Remover"
+                                            data-ng-click="infracoes.selecionar(infracao); infracoes.limparMensagens()"
+                                            data-app-modal-target="infracoes.modal.confirmarRemover">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr data-ng-hide="infracoes.cadastrados.length == 0">
+                                <td colspan="6"
+                                    class="text-center"
+                                    data-app-paginacao="infracoes.filtro.paginacao"
+                                    data-app-paginacao-limite="10"
+                                    data-app-paginacao-iniciar="infracoes.consultar(true)"
+                                    data-app-paginacao-atualizar="infracoes.consultar(false)"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
+
     @Html.Partial("~/Views/Infracoes/Modal/ModalCadastrarInfracao.cshtml")
     @Html.Partial("~/Views/Infracoes/Modal/ModalRemoverInfracao.cshtml")
 </div>
+

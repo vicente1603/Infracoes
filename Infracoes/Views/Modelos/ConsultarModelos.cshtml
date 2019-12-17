@@ -1,78 +1,98 @@
 ﻿@{
     Layout = "~/Views/Index.cshtml";
+    //if (Session["idUsuario"] == null)
+    //{
+    //    Response.Redirect("~/Login/Index");
+    //}
 }
 
+<div class="container-fluid" data-ng-controller="ModelosController as modelos">
 
-<div data-ng-controller="ModelosController as modelos">
-
-    @Html.Partial("~/Views/Modelos/Partial/FiltroModelos.cshtml")
-
-    <div class="alert alert-danger" data-ng-show="modelos.erros">
-        <button type="button" class="close" data-ng-click="modelos.limparMensagens()"><span aria-hidden="true">&times;</span></button>
-        <span data-ng-repeat="erro in modelos.erros" data-ng-bind="erro"></span>
-    </div>
-    <div class="alert alert-success" data-ng-show="modelos.info">
-        <button type="button" class="close" data-ng-click="modelos.limparMensagens()"><span aria-hidden="true">&times;</span></button>
-        <span data-ng-bind="modelos.info"></span>
-    </div>
-
-    <div class="panel panel-white">
-        <div class="panel-heading"><i class="fa fa-list"></i>&nbsp;Modelos</div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Modelos</h4>
+        </div>
         <div class="panel-body">
-            <div class="form-group">
-                <button class="btn btn-success"
-                        data-app-modal-target="modelos.modal.dados"
-                        data-ng-click="modelos.nova()">
-                    Adicionar&nbsp;
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
+
+            @Html.Partial("~/Views/Modelos/Partial/FiltroModelos.cshtml")
+
+            <div class="alert alert-danger" data-ng-show="modelos.erros">
+                <button type="button" class="close" data-ng-click="modelos.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+                <span data-ng-repeat="erro in modelos.erros" data-ng-bind="erro"></span>
+            </div>
+            <div class="alert alert-success" data-ng-show="modelos.info">
+                <button type="button" class="close" data-ng-click="modelos.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+                <span data-ng-bind="modelos.info"></span>
             </div>
 
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Descrição</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-ng-show="modelos.cadastrados.length == 0">
-                            <td colspan="2">
-                                <em>Nenhum modelo encontrado.</em>
-                            </td>
-                        </tr>
-                        <tr data-ng-repeat="modelo in modelos.cadastrados">
-                            <td data-ng-bind="modelo.descricao"></td>
-                            <td class="td-col-4 text-center">
-                                <button class="btn btn-warning btn-sm"
-                                        data-ng-click="modelos.selecionar(modelo); modelos.limparMensagens()"
-                                        data-app-modal-target="modelos.modal.dados">
-                                    Editar
-                                </button>
-                                <button class="btn btn-danger btn-sm"
-                                        data-ng-click="modelos.selecionar(modelo); modelos.limparMensagens()"
-                                        data-app-modal-target="modelos.modal.confirmarRemover">
-                                    Remover
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr data-ng-hide="modelos.cadastrados.length == 0">
-                            <td colspan="6"
-                                class="text-center"
-                                data-app-paginacao="modelos.filtro.paginacao"
-                                data-app-paginacao-limite="10"
-                                data-app-paginacao-iniciar="modelos.consultar(true)"
-                                data-app-paginacao-atualizar="modelos.consultar(false)"></td>
-                        </tr>
-                    </tfoot>
-                </table>
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <button class="btn btn-success"
+                                data-app-modal-target="modelos.modal.dados"
+                                data-ng-click="modelos.novo()">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            Novo
+                        </button>
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Descrição</th>
+                                <th class="table-col-3 text-center">Ações</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-show="modelos.cadastrados.length == 0">
+                                <td colspan="2">
+                                    <em>Nenhum Modelo encontrado.</em>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="no-border" data-ng-repeat="modelo in modelos.cadastrados">
+                            <tr>
+                                <td data-ng-bind="modelo.descricao"></td>
+
+                                <td class="text-center">
+                                    <button type="button"
+                                            class="btn btn-warning"
+                                            data-app-tooltip="Editar"
+                                            data-ng-click="modelos.selecionar(modelo); modelos.limparMensagens()"
+                                            data-app-modal-target="modelos.modal.dados">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+
+                                    <button type="button"
+                                            class="btn btn-danger"
+                                            data-app-tooltip="Remover"
+                                            data-ng-click="modelos.selecionar(modelo); modelos.limparMensagens()"
+                                            data-app-modal-target="modelos.modal.confirmarRemover">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr data-ng-hide="modelos.cadastrados.length == 0">
+                                <td colspan="2"
+                                    class="text-center"
+                                    data-app-paginacao="modelos.filtro.paginacao"
+                                    data-app-paginacao-limite="10"
+                                    data-app-paginacao-iniciar="modelos.consultar(true)"
+                                    data-app-paginacao-atualizar="modelos.consultar(false)"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
+
     @Html.Partial("~/Views/Modelos/Modal/ModalCadastrarModelo.cshtml")
     @Html.Partial("~/Views/Modelos/Modal/ModalRemoverModelo.cshtml")
 </div>
+

@@ -6,85 +6,101 @@
     //}
 }
 
-<div data-ng-controller="LogradourosController as logradouros">
+<div class="container-fluid" data-ng-controller="LogradourosController as logradouros">
 
-    @Html.Partial("~/Views/Logradouros/Partial/FiltroLogradouros.cshtml")
-
-    <div class="alert alert-danger" data-ng-show="logradouros.erros">
-        <button type="button" class="close" data-ng-click="logradouros.limparMensagens()"><span aria-hidden="true">&times;</span></button>
-        <span data-ng-repeat="erro in logradouros.erros" data-ng-bind="erro"></span>
-    </div>
-    <div class="alert alert-success" data-ng-show="logradouros.info">
-        <button type="button" class="close" data-ng-click="logradouros.limparMensagens()"><span aria-hidden="true">&times;</span></button>
-        <span data-ng-bind="logradouros.info"></span>
-    </div>
-
-    <div class="panel panel-white">
-        <div class="panel-heading"><i class="fa fa-list"></i>&nbsp;Logradouros</div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h4 class="panel-title">Logradouros</h4>
+        </div>
         <div class="panel-body">
-            <div class="form-group">
-                <button class="btn btn-success"
-                        data-app-modal-target="logradouros.modal.dados"
-                        data-ng-click="logradouros.novo()">
-                    Adicionar&nbsp;
-                    <i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
+
+            @Html.Partial("~/Views/Logradouros/Partial/FiltroLogradouros.cshtml")
+
+            <div class="alert alert-danger" data-ng-show="logradouros.erros">
+                <button type="button" class="close" data-ng-click="logradouros.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+                <span data-ng-repeat="erro in logradouros.erros" data-ng-bind="erro"></span>
+            </div>
+            <div class="alert alert-success" data-ng-show="logradouros.info">
+                <button type="button" class="close" data-ng-click="logradouros.limparMensagens()"><span aria-hidden="true">&times;</span></button>
+                <span data-ng-bind="logradouros.info"></span>
             </div>
 
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Rua</th>
-                            <th>Bairro</th>
-                            <th>Cidade</th>
-                            <th>Estado</th>
-                            <th>Cep</th>
-                            <th>Velocidade Máxima (km/h)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr data-ng-show="logradouros.cadastrados.length == 0">
-                            <td colspan="2">
-                                <em>Nenhum Logradouro encontrado.</em>
-                            </td>
-                        </tr>
-                        <tr data-ng-repeat="logradouro in logradouros.cadastrados">
-                            <td data-ng-bind="logradouro.rua"></td>
-                            <td data-ng-bind="logradouro.bairro"></td>
-                            <td data-ng-bind="logradouro.cidade"></td>
-                            <td data-ng-bind="logradouro.estado"></td>
-                            <td data-ng-bind="logradouro.cep"></td>
-                            <td data-ng-bind="logradouro.velocidadeMax"></td>
+            <div class="panel panel-default">
+                <div class="panel-body">
 
-                            <td class="td-col-4 text-center">
-                                <button class="btn btn-warning btn-sm"
-                                        data-ng-click="logradouros.selecionar(logradouro); logradouros.limparMensagens()"
-                                        data-app-modal-target="logradouros.modal.dados">
-                                    Editar
-                                </button>
-                                <button class="btn btn-danger btn-sm"
-                                        data-ng-click="logradouros.selecionar(logradouro); logradouros.limparMensagens()"
-                                        data-app-modal-target="logradouros.modal.confirmarRemover">
-                                    Remover
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr data-ng-hide="logradouros.cadastrados.length == 0">
-                            <td colspan="6"
-                                class="text-center"
-                                data-app-paginacao="logradouros.filtro.paginacao"
-                                data-app-paginacao-limite="10"
-                                data-app-paginacao-iniciar="logradouros.consultar(true)"
-                                data-app-paginacao-atualizar="logradouros.consultar(false)"></td>
-                        </tr>
-                    </tfoot>
-                </table>
+                    <div class="form-group">
+                        <button class="btn btn-success"
+                                data-app-modal-target="logradouros.modal.dados"
+                                data-ng-click="logradouros.novo()">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            Novo
+                        </button>
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Rua</th>
+                                <th>Bairro</th>
+                                <th>Cidade</th>
+                                <th>Estado</th>
+                                <th>Cep</th>
+                                <th>Velocidade Máxima (km/h)</th>
+                                <th class="table-col-3 text-center">Ações</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-ng-show="logradouros.cadastrados.length == 0">
+                                <td colspan="2">
+                                    <em>Nenhum Logradouro encontrado.</em>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody class="no-border" data-ng-repeat="logradouro in logradouros.cadastrados">
+                            <tr>
+                                <td data-ng-bind="logradouro.rua"></td>
+                                <td data-ng-bind="logradouro.bairro"></td>
+                                <td data-ng-bind="logradouro.cidade"></td>
+                                <td data-ng-bind="logradouro.estado"></td>
+                                <td data-ng-bind="logradouro.cep"></td>
+                                <td data-ng-bind="logradouro.velocidadeMax"></td>
+
+                                <td class="text-center">
+                                    <button type="button"
+                                            class="btn btn-warning"
+                                            data-app-tooltip="Editar"
+                                            data-ng-click="logradouros.selecionar(logradouro); logradouros.limparMensagens()"
+                                            data-app-modal-target="logradouros.modal.dados">
+                                        <span class="glyphicon glyphicon-pencil"></span>
+                                    </button>
+
+                                    <button type="button"
+                                            class="btn btn-danger"
+                                            data-app-tooltip="Remover"
+                                            data-ng-click="logradouros.selecionar(logradouro); logradouros.limparMensagens()"
+                                            data-app-modal-target="logradouros.modal.confirmarRemover">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr data-ng-hide="logradouros.cadastrados.length == 0">
+                                <td colspan="7"
+                                    class="text-center"
+                                    data-app-paginacao="logradouros.filtro.paginacao"
+                                    data-app-paginacao-limite="10"
+                                    data-app-paginacao-iniciar="logradouros.consultar(true)"
+                                    data-app-paginacao-atualizar="logradouros.consultar(false)"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+
 
     @Html.Partial("~/Views/Logradouros/Modal/ModalCadastrarLogradouro.cshtml")
     @Html.Partial("~/Views/Logradouros/Modal/ModalRemoverLogradouro.cshtml")
