@@ -39,6 +39,10 @@
         this.todos = function () {
             return ApiRequest.json("Agentes/Todos");
         }
+
+        this.relatorioAgentes = function () {
+            return ApiRequest.download("/Agentes/RelatorioAgentes", filtro);
+        }
     }
 
 })();

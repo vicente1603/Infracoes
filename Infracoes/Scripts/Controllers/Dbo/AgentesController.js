@@ -1,10 +1,12 @@
 ﻿(function () {
     angular.module("app").controller("AgentesController", [
         "Agente",
+        "Buffer",
+        "$scope",
         AgentesController
     ]);
 
-    function AgentesController(Agente) {
+    function AgentesController(Agente, Buffer, $scope) {
         var _self = this;
 
         _self.filtro = {
@@ -100,6 +102,19 @@
             _self.modal.limparMensagens();
             _self.agente = angular.copy(agente);
         }
+
+        _self.gerarRelatorio = function () {
+
+            console.log("gerar");
+
+            Agente
+                .cadastrados()
+                .ondeMatriculaContem(_self.filtro.dados.matricula)
+                .relatorioAgentes()
+                .success(angular.bind(this, function (pdf) {
+                    Buffer.saveToFile(pdf, "application/pdf", "RelatorioServidores");
+                }));
+        };
     }
 
 })();

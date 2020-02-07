@@ -175,6 +175,8 @@ D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Infracoes.pdb
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Antlr3.Runtime.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\EntityFramework.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\EntityFramework.SqlServer.dll
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\itextsharp.dll
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\itextsharp.xmlworker.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\jQuery.Validation.Unobtrusive.Native.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Core.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.EntityFramework.dll
@@ -188,9 +190,14 @@ D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Google.
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Owin.Security.OAuth.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Twitter.dll
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Threading.Tasks.dll
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Threading.Tasks.Extensions.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Web.Infrastructure.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Newtonsoft.Json.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Owin.dll
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Ssp.Framework.Api.dll
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\StructureMap.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.Helpers.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.Mvc.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.Optimization.dll
@@ -201,6 +208,12 @@ D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.WebPages.Razor.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\WebGrease.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\EntityFramework.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\EntityFramework.SqlServer.xml
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\itextsharp.xml
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Threading.Tasks.xml
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Threading.Tasks.Extensions.xml
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Newtonsoft.Json.xml
+D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\StructureMap.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.Helpers.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.Mvc.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.Razor.xml
@@ -208,7 +221,6 @@ D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.WebPages.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.WebPages.Deployment.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.WebPages.Razor.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\System.Web.Optimization.xml
-D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Newtonsoft.Json.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Antlr3.Runtime.pdb
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Core.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.AspNet.Identity.Owin.xml
@@ -222,6 +234,6 @@ D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Owin.Security.OAuth.x
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Google.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Owin.Security.Twitter.xml
 D:\VS Projects\Infracoes\Infracoes\Infracoes\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\VS Projects\Infracoes\Infracoes\Infracoes\obj\Debug\Infracoes.csprojResolveAssemblyReference.cache
 D:\VS Projects\Infracoes\Infracoes\Infracoes\obj\Debug\Infracoes.dll
 D:\VS Projects\Infracoes\Infracoes\Infracoes\obj\Debug\Infracoes.pdb
+D:\VS Projects\Infracoes\Infracoes\Infracoes\obj\Debug\Infracoes.csprojResolveAssemblyReference.cache

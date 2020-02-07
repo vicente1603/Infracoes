@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Infracoes.Extensions;
 using Infracoes.Models.DataModel;
 using Infracoes.Models.DomainModel.Dbo;
 using Infracoes.Models.ViewModel.Dbo.Agentes;
 using Infracoes.Models.DataModel.Dbo.Queries;
+using Ssp.Framework.Api.Attributes;
+using Ssp.Framework.Api.Extensions;
 
 namespace Infracoes.Controllers.Dbo
 {
@@ -27,7 +28,8 @@ namespace Infracoes.Controllers.Dbo
                 return this.ModelErrors();
             }
 
-            using (DbApplication db = new DbApplication()){
+            using (DbApplication db = new DbApplication())
+            {
                 Agente agenteBanco = db
                     .Agentes
                     .ComMatricula(viewModel.Matricula)
@@ -48,7 +50,7 @@ namespace Infracoes.Controllers.Dbo
                 agente.Efetivacao = viewModel.Efetivacao;
 
                 db.RegistrarAlterado(agente);
-                db.Salvar();                    
+                db.Salvar();
             }
             return this.Message("Agente atualizado com sucesso");
         }
@@ -61,13 +63,14 @@ namespace Infracoes.Controllers.Dbo
                 return this.ModelErrors();
             }
 
-            using (DbApplication db = new DbApplication()){
+            using (DbApplication db = new DbApplication())
+            {
                 Agente agenteBanco = db
                     .Agentes
                     .ComMatricula(viewModel.Matricula)
                     .SingleOrDefault();
 
-                if(agenteBanco != null)
+                if (agenteBanco != null)
                 {
                     return this.ErrorMessage("Já existe um agente com essa matrícula");
                 }
@@ -148,6 +151,42 @@ namespace Infracoes.Controllers.Dbo
                 db.Salvar();
 
                 return this.Message("Agente removido com sucesso.");
+            }
+        }
+
+        public ActionResult RelatorioAgentes(AgentesCadastradosRelatorioViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return this.ModelErrors();
+
+            RelatorioAgentesViewModel relatorioAgentes = new RelatorioAgentesViewModel();
+
+            using (DbApplication db = new DbApplication())
+            {
+                IQueryable<Agente> agentesQuery = db
+                    .Agentes
+                    .OndeMatriculaContem(viewModel.Matricula)
+                    .OrderBy(a => a.NomeAgente);
+
+                ICollection<Agente> agentes = agentesQuery
+                    .ToList();
+
+                relatorioAgentes.TotalAgentes = agentes.Count;
+
+                relatorioAgentes.TextoFiltros = "Relação de Agentes com "
+                + (!String.IsNullOrEmpty(viewModel.Nome) ? "Nome: " + viewModel.Nome + ", " : "")
+                + " cadastrados.";
+
+                relatorioAgentes.Agentes = new List<RelatorioAgentesViewModel.Agente>();
+
+                foreach (Agente agente in agentes)
+                {
+                    relatorioAgentes.Agentes.Add(new RelatorioAgentesViewModel.Agente
+                    {
+                        Nome = agente.NomeAgente,
+                    });
+                }
+                return this.PdfView("~/Relatorios/Agentes/RelatorioAgentes.cshtml", relatorioAgentes);
             }
         }
 

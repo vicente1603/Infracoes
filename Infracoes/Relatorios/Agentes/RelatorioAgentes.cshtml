@@ -1,0 +1,92 @@
+﻿@using Infracoes.Models.ViewModel.Dbo.Agentes
+
+@model RelatorioAgentesViewModel
+
+<style type="text/css">
+    table {
+        font-size: 10pt;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        padding: 4px;
+    }
+
+        table thead {
+            background-color: #b3d9ff;
+            vertical-align: text-bottom;
+        }
+
+        table tbody {
+            vertical-align: text-bottom;
+        }
+
+        table.sembordas,
+        table.sembordas th,
+        table.sembordas tr,
+        table.sembordas td {
+            border: 0px;
+        }
+</style>
+
+<table style="margin-bottom:30px; text-align:center; font-weight:bold; border: 0px">
+    <tr>
+        <td style="border: 0px !important">
+            <img src="@HttpContext.Current.Server.MapPath("~/Content/img/ssp-logo-sem-descricao.png")" height="100" width="110" />
+        </td>
+    </tr>
+    <tr>
+        <td style="border: 0px !important">
+            GOVERNO DE SERGIPE <br />
+            SECRETARIA DO ESTADO DA SEGURANÇA PÚBLICA<br />
+            GESTÃO DE PESSOAL<br />
+        </td>
+    </tr>
+</table>
+
+<table class="sembordas" style="margin-bottom:30px">
+    <tr>
+        <td style="text-align:center; font-size: 15pt"> RELATÓRIO DE SERVIDORES </td>
+    </tr>
+</table>
+
+<p style="text-align: justify">
+    @Model.TextoFiltros
+</p>
+
+<table class="sembordas" style="margin-top:20px;padding-top:10px; font-size:12pt">
+    <tr style="text-align:center">
+        <th>Servidores</th>
+    </tr>
+</table>
+
+<table class="sembordas">
+    <tr>
+        <td style="width: 180px; font-weight:bold">Quantidade Servidores:</td>
+        <td style="text-align:left; padding-right:5px">@Model.To</td>
+    </tr>
+</table>
+
+<table style="margin-top:25px;">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>CPF</th>
+            <th>Celular</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (RelatorioServidoresViewModel.Servidor servidor in @Model.Servidores)
+        {
+            <tr>
+                <td>@servidor.Nome</td>
+                <td>@servidor.Cargo</td>
+                <td>@servidor.Cpf</td>
+                <td>@servidor.NumeroCelular</td>
+            </tr>
+        }
+    </tbody>
+</table>
