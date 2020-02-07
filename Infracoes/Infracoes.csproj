@@ -287,6 +287,7 @@
     <Content Include="Content\css\app\App.css" />
     <Content Include="Content\css\app\BootstrapExtensions.css" />
     <Content Include="Content\css\app\CustomApp.css" />
+    <Content Include="Content\css\app\flat.css" />
     <Content Include="Content\css\app\NgCloak.css" />
     <Content Include="Content\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\css\images\ui-bg_flat_0_eeeeee_40x100.png" />
@@ -422,7 +423,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Services\Administrativo\" />
-    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

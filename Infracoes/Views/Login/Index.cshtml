@@ -18,9 +18,15 @@
                 color:red;
             }
         </style>
+        <link rel="shortcut icon" href="@Url.Content("~/Content/img/ssp.ico")" />
         <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor.min.css")" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        @Styles.Render("~/Styles/app-css")
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/Custom.css")" />
+        @Styles.Render("~/Styles/ssp-css")
+        <!--[if lte IE 9]>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/html5shiv.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/respond.min.js")"></script>
+    <![endif]-->
+    
     </head>
     <body>
         <div id="login-div">
@@ -72,8 +78,8 @@
                                     <tr>
                                         <td></td>
                                         <td>
-                                            <button type="submit" class="btn-primary">Entrar</button>
-                                            <button type="reset" class="btn-warning">Limpar</button>
+                                            <button type="submit" class="btn btn-primary">Entrar</button>
+                                            <button type="reset" class="btn btn-warning">Limpar</button>
                                         </td>
                                     </tr>
                                 </table>

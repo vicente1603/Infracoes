@@ -1,94 +1,4 @@
-﻿.media {
-    border-bottom: solid 5px;
-    font-size: 12pt;
-    cursor: pointer;
-}
-
-.social-media > li > .media {
-    padding: 8px;
-    margin-left: 5px;
-    width: 40px;
-    text-align: center;
-    margin-top: 5px !important;
-}
-
-    .social-media > li > .media:last-child {
-        margin-right: 5px;
-    }
-
-.social-media > li > .media-facebook {
-    color: #526ca4 !important;
-    border-bottom-color: #526ca4;
-}
-
-    .social-media > li > .media-facebook:hover {
-        background-color: #526ca4 !important;
-        color: #FFFFFF !important;
-    }
-
-.social-media > li > .media-twitter {
-    color: #00aced !important;
-    border-bottom-color: #00aced;
-}
-
-    .social-media > li > .media-twitter:hover {
-        background-color: #00aced !important;
-        color: #FFFFFF !important;
-    }
-
-
-.social-media > li > .media-whatsapp {
-    color: #00e676 !important;
-    border-bottom-color: #00e676;
-}
-
-    .social-media > li > .media-whatsapp:hover {
-        background-color: #00e676 !important;
-        color: #FFFFFF !important;
-    }
-
-.img-border {
-    border: solid thin #e2e2e2;
-    border-bottom: none;
-}
-
-.colorBox > div {
-    width: 30px;
-    height: 30px;
-    background: url(/pics/color.png);
-}
-
-#contentWrapper {
-    background: #fff;
-    padding: 10px 10px 0;
-    box-shadow: 3px 2px 5px rgba(0,0,0,.3);
-    margin: 20px 0;
-}
-
-.btn-gray {
-    background-color: #ccc;
-    background-image: -moz-linear-gradient(#f4f4f4,#bcbcbc);
-    background-image: -webkit-linear-gradient(#f4f4f4,#bcbcbc);
-    background-image: -ms-linear-gradient(#f4f4f4,#bcbcbc);
-    border-color: #aaa;
-    color: #000;
-}
-
-/*Dashboard*/
-.menu {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.page-header {
-    clear: both;
-}
-
-.menu > .item-menu {
-    float: left;
-    margin-right: 15px;
-    margin-bottom: 15px;
-}
+﻿.table thead tr { background:#373a3c; color:#fff; }
 
 .midia {
     display: table;
@@ -138,19 +48,19 @@
 .teste-box {
     background: rgba(333,333,333,0.9);
     float: left;
-    height:100px;
-    width:100px;
-    margin-left:auto;
-    margin-right:auto;
+    height: 100px;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
     position: absolute;
     top: 0px;
     display: none;
 }
 
-.teste-box > .midia-content {
-    color: #777777 !important;
-}
+    .teste-box > .midia-content {
+        color: #777777 !important;
+    }
 
 .midia:hover > .teste-box {
-        display: block;
-    }
+    display: block;
+}

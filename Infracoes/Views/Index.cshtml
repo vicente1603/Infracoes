@@ -7,8 +7,13 @@
     <meta name="viewport" content="width=device-width" />
     <title>Infrações</title>
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor.min.css")" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    @Styles.Render("~/Styles/app-css")
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/Custom.css")" />
+    @Styles.Render("~/Styles/ssp-css")
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/html5shiv.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/respond.min.js")"></script>
+    <![endif]-->
+
 </head>
 <body data-ng-controller="AppController as app" data-ng-init="app.validarSessao()">
     <div class="modal" data-backdrop="static" data-app-carregando>
