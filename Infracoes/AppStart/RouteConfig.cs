@@ -20,41 +20,41 @@ namespace Infracoes.AppStart
             routes.MapRoute(
                 name: "Default",
                 url:"{controller}/{action}/{id}",
-                defaults: new { controller = "Views", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
                 );
 
-            routes.MapRoute(
-                name: "API",
-                url: "{controller}/{action}",
-                defaults: null
-                );
+            //routes.MapRoute(
+            //    name: "API",
+            //    url: "{controller}/{action}",
+            //    defaults: null
+            //    );
 
-            routes.MapRoute(
-                name: "Index",
-                url: "{controller}",
-                defaults: new
-                {
-                    action = "Index"
-                },
-                constraints: new
-                {
-                    httpMethod = new HttpMethodConstraint("Get"),
+            //routes.MapRoute(
+            //    name: "Index",
+            //    url: "{controller}",
+            //    defaults: new
+            //    {
+            //        action = "Index"
+            //    },
+            //    constraints: new
+            //    {
+            //        httpMethod = new HttpMethodConstraint("Get"),
                                 
-                });
+            //    });
 
-            routes.MapRoute(
-                name: "Home",
-                url: "",
-                defaults: new
-                {
-                    action = "Index",
-                    controller = "Veiculos"
-                },
-                constraints: new
-                {
-                    httpMethod = new HttpMethodConstraint("Get"),
+            //routes.MapRoute(
+            //    name: "Home",
+            //    url: "",
+            //    defaults: new
+            //    {
+            //        action = "Index",
+            //        controller = "Veiculos"
+            //    },
+            //    constraints: new
+            //    {
+            //        httpMethod = new HttpMethodConstraint("Get"),
 
-                });
+            //    });
 
             //routes.MapRoute(
             //    name: "default",

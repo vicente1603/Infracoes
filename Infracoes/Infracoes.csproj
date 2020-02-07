@@ -214,6 +214,21 @@
     <Compile Include="Extensions\HttpContextBaseExtension.cs" />
     <Compile Include="Extensions\MappingExtensions.cs" />
     <Compile Include="Extensions\RedirectResultExtension.cs" />
+    <Compile Include="Models\Cadastro.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cadastro.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cadastro.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cadastro.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cadastro.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cadastro.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\DataModel\DbApplication.cs" />
     <Compile Include="Models\DataModel\Dbo\Mappers\AgenteMap.cs" />
     <Compile Include="Models\DataModel\Dbo\Mappers\InfracaoMap.cs" />
@@ -233,25 +248,10 @@
     <Compile Include="Models\DomainModel\Dbo\Modelo.cs" />
     <Compile Include="Models\DomainModel\Dbo\Proprietario.cs" />
     <Compile Include="Models\DomainModel\Dbo\Veiculo.cs" />
-    <Compile Include="Models\LoginDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LoginDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\LoginDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoginDataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Seguranca\CriptografiaAES.cs" />
     <Compile Include="Models\Seguranca\Token.cs" />
     <Compile Include="Models\Usuario.cs">
-      <DependentUpon>LoginDataModel.tt</DependentUpon>
+      <DependentUpon>Cadastro.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Validacao\ExpressaoRegular.cs" />
     <Compile Include="Models\ViewModel\Dbo\Agentes\AgentesCadastradosRelatorioViewModel.cs" />
@@ -315,15 +315,15 @@
     <Content Include="Content\fonts\fontawesome-webfont.woff" />
     <Content Include="Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="Models\LoginDataModel.Context.tt">
+    <Content Include="Models\Cadastro.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LoginDataModel.edmx</DependentUpon>
-      <LastGenOutput>LoginDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>Cadastro.edmx</DependentUpon>
+      <LastGenOutput>Cadastro.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\LoginDataModel.tt">
+    <Content Include="Models\Cadastro.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>LoginDataModel.edmx</DependentUpon>
-      <LastGenOutput>LoginDataModel.cs</LastGenOutput>
+      <DependentUpon>Cadastro.edmx</DependentUpon>
+      <LastGenOutput>Cadastro.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\Controllers\AppController.js" />
     <Content Include="Scripts\Controllers\Dbo\AgentesController.js" />
@@ -372,6 +372,13 @@
     <Content Include="Scripts\html5shiv.min.js" />
     <Content Include="Relatorios\Agentes\RelatorioAgentes.cshtml" />
     <Content Include="Relatorios\Web.config" />
+    <EntityDeploy Include="Models\Cadastro.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Cadastro.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Cadastro.edmx.diagram">
+      <DependentUpon>Cadastro.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -411,9 +418,11 @@
     <Content Include="Views\Veiculos\Partial\FiltroVeiculos.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scripts\Services\Administrativo\" />
+    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -492,20 +501,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="Models\LoginDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LoginDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Models\LoginDataModel.edmx.diagram">
-      <DependentUpon>LoginDataModel.edmx</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

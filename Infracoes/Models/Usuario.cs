@@ -15,8 +15,8 @@ namespace Infracoes.Models
     public partial class Usuario
     {
         public int IdUsuario { get; set; }
-        public string NomeUsuario { get; set; }
+        public string Nome { get; set; }
         public string Senha { get; set; }
-
+        public string MessagemErroLogin { get; set; }
     }
 }

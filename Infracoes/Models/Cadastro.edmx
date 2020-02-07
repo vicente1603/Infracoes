@@ -4,38 +4,30 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LoginDataBaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Infracoes.dbo.Usuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+      <Schema Namespace="InfracoesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NomeUsuario" Type="varchar" MaxLength="50" />
-          <Property Name="Senha" Type="varchar" MaxLength="50" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Senha" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="LoginDataBaseModelStoreContainer">
-          <EntitySet Name="Usuario" EntityType="Self.Usuario" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Usuario].[IdUsuario] AS [IdUsuario], 
-    [Usuario].[NomeUsuario] AS [NomeUsuario], 
-    [Usuario].[Senha] AS [Senha]
-    FROM [dbo].[Usuario] AS [Usuario]</DefiningQuery>
-          </EntitySet>
+        <EntityContainer Name="InfracoesModelStoreContainer">
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="LoginDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="InfracoesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Usuario">
           <Key>
             <PropertyRef Name="IdUsuario" />
           </Key>
-          <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NomeUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
         <EntityContainer Name="InfracoesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
@@ -45,12 +37,12 @@ warning 6002: The table/view 'Infracoes.dbo.Usuario' does not have a primary key
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LoginDataBaseModelStoreContainer" CdmEntityContainer="InfracoesEntities">
+        <EntityContainerMapping StorageEntityContainer="InfracoesModelStoreContainer" CdmEntityContainer="InfracoesEntities">
           <EntitySetMapping Name="Usuarios">
-            <EntityTypeMapping TypeName="LoginDataBaseModel.Usuario">
+            <EntityTypeMapping TypeName="InfracoesModel.Usuario">
               <MappingFragment StoreEntitySet="Usuario">
                 <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
-                <ScalarProperty Name="NomeUsuario" ColumnName="NomeUsuario" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="Senha" ColumnName="Senha" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -76,10 +68,6 @@ warning 6002: The table/view 'Infracoes.dbo.Usuario' does not have a primary key
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
-    <Diagrams>
-      <Diagram DiagramId="0278e5ca6307433c88b1ed1a8f4a01fa" Name="Diagram1">
-        <EntityTypeShape EntityType="LoginDataBaseModel.Usuario" Width="1.5" PointX="1" PointY="1.125" IsExpanded="true" />
-      </Diagram>
-    </Diagrams>
+    <Diagrams></Diagrams>
   </Designer>
 </edmx:Edmx>
