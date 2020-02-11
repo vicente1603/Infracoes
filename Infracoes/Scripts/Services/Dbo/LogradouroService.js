@@ -40,6 +40,10 @@
         this.todos = function () {
             return ApiRequest.json("Logradouros/Todos");
         }
+
+        this.relatorioLogradouros = function () {
+            return ApiRequest.download("/Logradouros/RelatorioLogradouros", filtro);
+        }
     }
 
 })();

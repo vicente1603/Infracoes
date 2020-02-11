@@ -1,9 +1,9 @@
 ﻿@{
     Layout = "~/Views/Index.cshtml";
-    //if (Session["idUsuario"] == null)
-    //{
-    //    Response.Redirect("~/Login/Index");
-    //}
+    if (Session["idUsuario"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
 }
 
 <div class="container-fluid" data-ng-controller="InfracoesController as infracoes">
@@ -35,6 +35,10 @@
                             <span class="glyphicon glyphicon-plus"></span>
                             Nova
                         </button>
+                        <button class="btn btn-default" data-ng-click="infracoes.gerarRelatorio()">
+                            <span class="glyphicon glyphicon-print"></span>
+                            Imprimir
+                        </button>
                     </div>
 
                     <table class="table table-hover">
@@ -61,7 +65,7 @@
                                 <td data-ng-bind="infracao.descricao"></td>
                                 <td data-ng-bind="infracao.velocidade"></td>
                                 <td data-ng-bind="infracao.placaVeiculo"></td>
-                                <td data-ng-bind="infracao.nomeAgente"></td>
+                                <td data-ng-bind="infracao.matriculaAgente"></td>
                                 <td data-ng-bind="infracao.cepLogradouro"></td>
 
                                 <td class="text-center">

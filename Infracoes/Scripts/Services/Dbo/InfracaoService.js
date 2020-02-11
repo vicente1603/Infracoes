@@ -39,6 +39,10 @@
         this.todas = function () {
             return ApiRequest.json("/Infracoes/Todas");
         }
+
+        this.relatorioInfracoes = function () {
+            return ApiRequest.download("/Infracoes/RelatorioInfracoes", filtro);
+        }
     }
 
 })();

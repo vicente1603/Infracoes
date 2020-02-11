@@ -1,9 +1,9 @@
 ﻿@{
     Layout = "~/Views/Index.cshtml";
-    //if (Session["idUsuario"] == null)
-    //{
-    //    Response.Redirect("~/Login/Index");
-    //}
+    if (Session["idUsuario"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
 }
 
 <div class="container-fluid" data-ng-controller="ModelosController as modelos">
@@ -34,6 +34,10 @@
                                 data-ng-click="modelos.novo()">
                             <span class="glyphicon glyphicon-plus"></span>
                             Novo
+                        </button>
+                        <button class="btn btn-default" data-ng-click="modelos.gerarRelatorio()">
+                            <span class="glyphicon glyphicon-print"></span>
+                            Imprimir
                         </button>
                     </div>
 

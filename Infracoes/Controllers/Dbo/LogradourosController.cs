@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Infracoes.Extensions;
 using Infracoes.Models.DataModel;
 using Infracoes.Models.DomainModel.Dbo;
 using Infracoes.Models.ViewModel.Dbo.Logradouros;
 using Infracoes.Models.DataModel.Dbo.Queries;
+using Ssp.Framework.Api.Extensions;
 
 namespace Infracoes.Controllers.Dbo
 {
@@ -157,6 +157,43 @@ namespace Infracoes.Controllers.Dbo
                 db.Salvar();
 
                 return this.Message("Logradouro removido com sucesso");
+            }
+        }
+
+        public ActionResult RelatorioLogradouros(LogradourosCadastradosRelatorioViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return this.ModelErrors();
+
+            RelatorioLogradourosViewModel relatorioLogradouros = new RelatorioLogradourosViewModel();
+
+            using (DbApplication db = new DbApplication())
+            {
+                IQueryable<Logradouro> logradourosQuery = db
+                    .Logradouros
+                    .OndeCepContem(viewModel.Cep)
+                    .OrderBy(a => a.IdLogradouro);
+
+                ICollection<Logradouro> logradouros = logradourosQuery
+                    .ToList();
+
+                relatorioLogradouros.TotalLogradouros = logradouros.Count;
+
+                relatorioLogradouros.Logradouros = new List<RelatorioLogradourosViewModel.Logradouro>();
+
+                foreach (Logradouro logradouro in logradouros)
+                {
+                    relatorioLogradouros.Logradouros.Add(new RelatorioLogradourosViewModel.Logradouro
+                    {
+                        Rua = logradouro.Rua,
+                        Bairro = logradouro.Bairro,
+                        Cidade = logradouro.Cidade,
+                        Estado = logradouro.Estado,
+                        Cep = logradouro.Cep,
+                        VelocidadeMax = logradouro.VelocidadeMax
+                    });
+                }
+                return this.PdfView("~/Relatorios/Logradouros/RelatorioLogradouros.cshtml", relatorioLogradouros);
             }
         }
 

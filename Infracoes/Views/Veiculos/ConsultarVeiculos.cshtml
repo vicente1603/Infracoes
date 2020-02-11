@@ -1,9 +1,9 @@
 ﻿@{
     Layout = "~/Views/Index.cshtml";
-    //if (Session["idUsuario"] == null)
-    //{
-    //    Response.Redirect("~/Login/Index");
-    //}
+    if (Session["idUsuario"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
 }
 
 <div class="container-fluid" data-ng-controller="VeiculosController as veiculos">

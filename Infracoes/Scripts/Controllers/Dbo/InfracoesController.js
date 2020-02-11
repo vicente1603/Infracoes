@@ -4,10 +4,12 @@
         "Agente",
         "Logradouro",
         "Veiculo",
+        "Buffer",
+        "$scope",
         InfracoesController
     ]);
 
-    function InfracoesController(Infracao, Agente, Logradouro, Veiculo) {
+    function InfracoesController(Infracao, Agente, Logradouro, Veiculo, Buffer, $scope) {
 
         var _self = this;
 
@@ -146,6 +148,17 @@
             _self.modal.limparMensagens();
             _self.infracao = angular.copy(infracao);
         }
+
+        _self.gerarRelatorio = function () {
+
+            Infracao
+                .cadastradas()
+                .ondeDescricaoContem(_self.filtro.dados.descricao)
+                .relatorioInfracoes()
+                .success(angular.bind(this, function (pdf) {
+                    Buffer.saveToFile(pdf, "application/pdf", "RelatorioInfracoes");
+                }));
+        };
 
     }
 

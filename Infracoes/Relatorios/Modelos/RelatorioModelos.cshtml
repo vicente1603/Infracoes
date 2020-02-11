@@ -1,6 +1,6 @@
-﻿@using Infracoes.Models.ViewModel.Dbo.Agentes
+﻿@using Infracoes.Models.ViewModel.Dbo.Modelos
 
-@model RelatorioAgentesViewModel
+@model RelatorioModelosViewModel
 
 <style type="text/css">
     table {
@@ -41,39 +41,33 @@
 
 <table class="sembordas" style="margin-bottom:30px">
     <tr>
-        <td style="text-align:center; font-size: 15pt"> RELATÓRIO DE AGENTES </td>
+        <td style="text-align:center; font-size: 15pt"> RELATÓRIO DE MODELOS </td>
     </tr>
 </table>
 
 <table class="sembordas" style="margin-top:20px;padding-top:10px; font-size:12pt">
     <tr style="text-align:center">
-        <th>Agentes</th>
+        <th>Modelos</th>
     </tr>
 </table>
 
 <table class="sembordas">
     <tr>
-        <td style="width: 180px; font-weight:bold">Quantidade de agentes: @Model.TotalAgentes</td>
+        <td style="width: 180px; font-weight:bold">Quantidade de modelos: @Model.TotalModelos</td>
     </tr>
 </table>
 
 <table style="margin-top:25px;">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Matrícula</th>
-            <th>Data de Efetivação</th>
-            <th>Tempo de Serviço (Meses)</th>
+            <th>Descrição</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (RelatorioAgentesViewModel.Agente agente in @Model.Agentes)
+        @foreach (RelatorioModelosViewModel.Modelo modelo in @Model.Modelos)
         {
             <tr>
-                <td>@agente.Nome</td>
-                <td>@agente.Matricula</td>
-                <td>@agente.DataEfetivacao</td>
-                <td>@agente.TempoServico</td>
+                <td>@modelo.Descricao</td>
             </tr>
         }
     </tbody>

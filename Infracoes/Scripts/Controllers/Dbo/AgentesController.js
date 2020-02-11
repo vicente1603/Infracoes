@@ -105,8 +105,6 @@
 
         _self.gerarRelatorio = function () {
 
-            console.log("gerar");
-
             Agente
                 .cadastrados()
                 .ondeMatriculaContem(_self.filtro.dados.matricula)

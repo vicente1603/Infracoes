@@ -1,29 +1,31 @@
 ﻿<div class="panel panel-white">
-    <div class="panel-heading"><i class="fa fa-search"></i>&nbsp;Filtro</div>
-    <div class="panel-body">
-        <form data-ng-submit="infracoes.consultar(true); infracoes.limparMensagens();">
-            <div class="row-fluid">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <label>Descrição</label>
-                        <input class="form-control"
-                               data-ng-model="infracoes.filtro.dados.descricao" />
+    <div class="panel panel-default">
+        <div class="panel-heading"><i class="fa fa-search"></i>&nbsp;Filtro</div>
+        <div class="panel-body">
+            <form data-ng-submit="infracoes.consultar(true); infracoes.limparMensagens();">
+                <div class="row-fluid">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Descrição</label>
+                            <input class="form-control"
+                                   data-ng-model="infracoes.filtro.dados.descricao" />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row-fluid">
-                <div class="col-md-12">
-                    <button class="btn btn-primary"
-                            data-ng-disabled="infracoes.filtro.pesquisando">
-                        <span data-ng-show="infracoes.filtro.pesquisando">Pesquisando&nbsp;<span class="fa fa-refresh fa-spin"></span></span>
-                        <span data-ng-hide="infracoes.filtro.pesquisando">Pesquisar</span>
-                    </button>
-                    <button class="btn btn-warning" data-ng-click="infracoes.filtro.limpar(); infracoes.limparMensagens();">
-                        Limpar Filtro
-                    </button>
+                <div class="row-fluid">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary"
+                                data-ng-disabled="infracoes.filtro.pesquisando">
+                            <span data-ng-show="infracoes.filtro.pesquisando">Pesquisando&nbsp;<span class="fa fa-refresh fa-spin"></span></span>
+                            <span data-ng-hide="infracoes.filtro.pesquisando">Pesquisar</span>
+                        </button>
+                        <button class="btn btn-warning" data-ng-click="infracoes.filtro.limpar(); infracoes.limparMensagens();">
+                            Limpar Filtro
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 

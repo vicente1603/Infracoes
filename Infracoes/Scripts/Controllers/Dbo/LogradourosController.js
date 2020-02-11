@@ -1,10 +1,12 @@
 ﻿(function () {
     angular.module("app").controller("LogradourosController", [
         "Logradouro",
+        "Buffer",
+        "$scope",
         LogradourosController
     ]);
 
-    function LogradourosController(Logradouro) {
+    function LogradourosController(Logradouro, Buffer, $scope) {
         var _self = this;
 
         _self.filtro = {
@@ -99,6 +101,17 @@
             _self.modal.limparMensagens();
             _self.logradouro = angular.copy(logradouro);
         }
+
+        _self.gerarRelatorio = function () {
+
+            Logradouro
+                .cadastrados()
+                .ondeCepContem(_self.filtro.dados.cep)
+                .relatorioLogradouros()
+                .success(angular.bind(this, function (pdf) {
+                    Buffer.saveToFile(pdf, "application/pdf", "RelatorioLogradouros");
+                }));
+        };
     }
 
 })();

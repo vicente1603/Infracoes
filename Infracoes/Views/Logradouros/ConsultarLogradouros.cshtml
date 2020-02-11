@@ -1,9 +1,9 @@
 ﻿@{
     Layout = "~/Views/Index.cshtml";
-    //if (Session["idUsuario"] == null)
-    //{
-    //    Response.Redirect("~/Login/Index");
-    //}
+    if (Session["idUsuario"] == null)
+    {
+        Response.Redirect("~/Login/Index");
+    }
 }
 
 <div class="container-fluid" data-ng-controller="LogradourosController as logradouros">
@@ -12,6 +12,7 @@
         <div class="panel-heading">
             <h4 class="panel-title">Logradouros</h4>
         </div>
+
         <div class="panel-body">
 
             @Html.Partial("~/Views/Logradouros/Partial/FiltroLogradouros.cshtml")
@@ -34,6 +35,10 @@
                                 data-ng-click="logradouros.novo()">
                             <span class="glyphicon glyphicon-plus"></span>
                             Novo
+                        </button>
+                        <button class="btn btn-default" data-ng-click="logradouros.gerarRelatorio()">
+                            <span class="glyphicon glyphicon-print"></span>
+                            Imprimir
                         </button>
                     </div>
 

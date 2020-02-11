@@ -1,10 +1,12 @@
 ﻿(function () {
     angular.module("app").controller("ModelosController", [
         "Modelo",
+        "Buffer",
+        "$scope",
         ModelosController
     ]);
 
-    function ModelosController(Modelo) {
+    function ModelosController(Modelo, Buffer, $scope) {
         var _self = this;
 
         _self.filtro = {
@@ -99,6 +101,17 @@
             _self.modal.limparMensagens();
             _self.modelo = angular.copy(modelo);
         }
+
+        _self.gerarRelatorio = function () {
+
+            Modelo
+                .cadastrados()
+                .ondeDescricaoContem(_self.filtro.dados.descricao)
+                .relatorioModelos()
+                .success(angular.bind(this, function (pdf) {
+                    Buffer.saveToFile(pdf, "application/pdf", "RelatorioModelos");
+                }));
+        };
     }
 
 })();

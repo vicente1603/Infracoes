@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Infracoes.Extensions;
+using Ssp.Framework.Api.Extensions;
 using Infracoes.Models.DataModel;
 using Infracoes.Models.DataModel.Dbo.Queries;
 using Infracoes.Models.DomainModel.Dbo;
 using System.Data.Entity;
+using Infracoes.Models.ViewModel.Dbo.Modelos;
 
 
 namespace Infracoes.Controllers.Dbo
@@ -138,6 +139,38 @@ namespace Infracoes.Controllers.Dbo
                 db.Salvar();
 
                 return this.Message("Modelo removido com sucesso.");
+            }
+        }
+
+        public ActionResult RelatorioModelos(ModelosCadastradosRelatorioViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return this.ModelErrors();
+
+            RelatorioModelosViewModel relatorioModelos = new RelatorioModelosViewModel();
+
+            using (DbApplication db = new DbApplication())
+            {
+                IQueryable<Modelo> modelosQuery = db
+                    .Modelos
+                    .OndeDescricaoContem(viewModel.Descricao)
+                    .OrderBy(a => a.IdModelo);
+
+                ICollection<Modelo> modelos = modelosQuery
+                    .ToList();
+
+                relatorioModelos.TotalModelos = modelos.Count;
+
+                relatorioModelos.Modelos = new List<RelatorioModelosViewModel.Modelo>();
+
+                foreach (Modelo modelo in modelos)
+                {
+                    relatorioModelos.Modelos.Add(new RelatorioModelosViewModel.Modelo
+                    {
+                        Descricao = modelo.Descricao
+                    });
+                }
+                return this.PdfView("~/Relatorios/Modelos/RelatorioModelos.cshtml", relatorioModelos);
             }
         }
 

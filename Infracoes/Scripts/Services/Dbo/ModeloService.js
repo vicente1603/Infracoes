@@ -41,6 +41,10 @@
         this.todos = function () {
             return ApiRequest.json("/Modelos/Todos");
         }
+
+        this.relatorioModelos= function () {
+            return ApiRequest.download("/Modelos/RelatorioModelos", filtro);
+        }
     }
 
 })();

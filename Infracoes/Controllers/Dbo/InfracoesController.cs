@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Infracoes.Extensions;
+using Ssp.Framework.Api.Extensions;
 using Infracoes.Models.DataModel;
 using Infracoes.Models.DataModel.Dbo.Queries;
 using System.Data.Entity;
@@ -121,6 +121,7 @@ namespace Infracoes.Controllers.Dbo
                     infracoesJson.Add(new
                     {
                         nomeAgente = infracao.Agente.NomeAgente,
+                        matriculaAgente = infracao.Agente.Matricula,
                         cepLogradouro = infracao.Logradouro.Cep,
                         idInfracao = infracao.IdInfracao,
                         velocidade = infracao.Velocidade,
@@ -161,6 +162,45 @@ namespace Infracoes.Controllers.Dbo
                 db.Salvar();
 
                 return this.Message("Infração removida com sucesso.");
+            }
+        }
+
+        public ActionResult RelatorioInfracoes(InfracoesCadastradasRelatorioViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return this.ModelErrors();
+
+            RelatorioInfracoesViewModel relatorioInfracoes = new RelatorioInfracoesViewModel();
+
+            using (DbApplication db = new DbApplication())
+            {
+                IQueryable<Infracao> infracoesQuery = db
+                    .Infracoes
+                    .Include(v => v.Veiculo)
+                    .Include(a => a.Agente)
+                    .Include(l => l.Logradouro)
+                    .OndeDescricaoContem(viewModel.Descricao)
+                    .OrderBy(a => a.IdInfracao);
+
+                ICollection<Infracao> infracoes = infracoesQuery
+                    .ToList();
+
+                relatorioInfracoes.TotalInfracoes = infracoes.Count;
+
+                relatorioInfracoes.Infracoes = new List<RelatorioInfracoesViewModel.Infracao>();
+
+                foreach (Infracao infracao in infracoes)
+                {
+                    relatorioInfracoes.Infracoes.Add(new RelatorioInfracoesViewModel.Infracao
+                    {
+                        Descricao = infracao.Descricao,
+                        Velocidade = infracao.Velocidade,
+                        Veiculo = infracao.Veiculo.Placa,
+                        Agente = infracao.Agente.Matricula,
+                        Logradouro = infracao.Logradouro.Cep
+                    });
+                }
+                return this.PdfView("~/Relatorios/Infracoes/RelatorioInfracoes.cshtml", relatorioInfracoes);
             }
         }
 
