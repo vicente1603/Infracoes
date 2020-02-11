@@ -112,7 +112,7 @@
                 .ondeMatriculaContem(_self.filtro.dados.matricula)
                 .relatorioAgentes()
                 .success(angular.bind(this, function (pdf) {
-                    Buffer.saveToFile(pdf, "application/pdf", "RelatorioServidores");
+                    Buffer.saveToFile(pdf, "application/pdf", "RelatorioAgentes");
                 }));
         };
     }

@@ -279,6 +279,8 @@
     <Compile Include="Models\ViewModel\Dbo\Veiculos\AtualizarVeiculoViewModel.cs" />
     <Compile Include="Models\ViewModel\Dbo\Veiculos\CadastrarVeiculoViewModel.cs" />
     <Compile Include="Models\ViewModel\Dbo\Veiculos\IdVeiculoViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Veiculos\RelatorioVeiculosViewModel.cs" />
+    <Compile Include="Models\ViewModel\Dbo\Veiculos\VeiculosCadastradosRelatorioViewModel.cs" />
     <Compile Include="Models\ViewModel\Dbo\Veiculos\VeiculosCadastradosViewModel.cs" />
     <Compile Include="Models\ViewModel\PaginacaoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -380,6 +382,11 @@
     <Content Include="Models\Cadastro.edmx.diagram">
       <DependentUpon>Cadastro.edmx</DependentUpon>
     </Content>
+    <Content Include="Relatorios\Infracoes\RelatorioInfracoes.cshtml" />
+    <Content Include="Relatorios\Logradouros\RelatorioLogradouros.cshtml" />
+    <Content Include="Relatorios\Modelos\RelatorioModelos.cshtml" />
+    <Content Include="Relatorios\Proprietarios\RelatorioProprietarios.cshtml" />
+    <Content Include="Relatorios\Veiculos\RelatorioVeiculos.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

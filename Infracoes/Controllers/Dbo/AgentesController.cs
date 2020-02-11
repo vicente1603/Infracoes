@@ -173,10 +173,6 @@ namespace Infracoes.Controllers.Dbo
 
                 relatorioAgentes.TotalAgentes = agentes.Count;
 
-                relatorioAgentes.TextoFiltros = "Relação de Agentes com "
-                + (!String.IsNullOrEmpty(viewModel.Nome) ? "Nome: " + viewModel.Nome + ", " : "")
-                + " cadastrados.";
-
                 relatorioAgentes.Agentes = new List<RelatorioAgentesViewModel.Agente>();
 
                 foreach (Agente agente in agentes)
@@ -184,6 +180,9 @@ namespace Infracoes.Controllers.Dbo
                     relatorioAgentes.Agentes.Add(new RelatorioAgentesViewModel.Agente
                     {
                         Nome = agente.NomeAgente,
+                        Matricula = agente.Matricula,
+                        DataEfetivacao = agente.Efetivacao.ToString("dd/MM/yyyy"),
+                        TempoServico = agente.TempoServico
                     });
                 }
                 return this.PdfView("~/Relatorios/Agentes/RelatorioAgentes.cshtml", relatorioAgentes);

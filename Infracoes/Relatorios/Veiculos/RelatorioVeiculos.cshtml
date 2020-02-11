@@ -1,0 +1,89 @@
+﻿@using Infracoes.Models.ViewModel.Dbo.Veiculos
+
+@model RelatorioVeiculosViewModel
+
+<style type="text/css">
+    table {
+        font-size: 10pt;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+        padding: 4px;
+    }
+
+        table thead {
+            background-color: #b3d9ff;
+            vertical-align: text-bottom;
+        }
+
+        table tbody {
+            vertical-align: text-bottom;
+        }
+
+        table.sembordas,
+        table.sembordas th,
+        table.sembordas tr,
+        table.sembordas td {
+            border: 0px;
+        }
+</style>
+
+<table style="margin-bottom:30px; text-align:center; font-weight:bold; border: 0px">
+    <tr>
+        <td style="border: 0px !important">
+            SISTEMA DE GESTÃO DE INFRAÇÕES<br />
+        </td>
+    </tr>
+</table>
+
+<table class="sembordas" style="margin-bottom:30px">
+    <tr>
+        <td style="text-align:center; font-size: 15pt"> RELATÓRIO DE VEÍCULOS </td>
+    </tr>
+</table>
+
+<table class="sembordas" style="margin-top:20px;padding-top:10px; font-size:12pt">
+    <tr style="text-align:center">
+        <th>Veículos</th>
+    </tr>
+</table>
+
+<table class="sembordas">
+    <tr>
+        <td style="width: 180px; font-weight:bold">Quantidade de veículos: @Model.TotalVeiculos</td>
+    </tr>
+</table>
+
+<table style="margin-top:25px;">
+    <thead>
+        <tr>
+            <th>Placa</th>
+            <th>UF</th>
+            <th>Modelo</th>
+            <th>Infrações</th>
+            <th>Proprietário</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (RelatorioVeiculosViewModel.Veiculo veiculo in @Model.Veiculos)
+        {
+            <tr>
+                <td>@veiculo.Placa</td>
+                <td>@veiculo.Uf</td>
+                <td>@veiculo.Modelo</td>
+                <td>
+
+                    @foreach (RelatorioVeiculosViewModel.Veiculo infracao in @Model.Veiculos)
+                    {
+                        @infracao.Infracao
+                    }
+
+                </td>
+                <td>@veiculo.Proprietario</td>
+            </tr>
+        }
+    </tbody>
+</table>

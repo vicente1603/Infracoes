@@ -4,10 +4,12 @@
         "Proprietario",
         "Modelo",
         "Infracao",
+        "Buffer",
+        "$scope",
         VeiculosController
     ]);
 
-    function VeiculosController(Veiculo, Proprietario, Modelo, Infracao) {
+    function VeiculosController(Veiculo, Proprietario, Modelo, Infracao, Buffer, $scope) {
         var _self = this;
 
         _self.filtro = {
@@ -148,6 +150,17 @@
             _self.modal.limparMensagens();
             _self.veiculo = angular.copy(veiculo);
         }
+
+        _self.gerarRelatorio = function () {
+
+            Veiculo
+                .cadastrados()
+                .ondePlacaContem(_self.filtro.dados.placa)
+                .relatorioVeiculos()
+                .success(angular.bind(this, function (pdf) {
+                    Buffer.saveToFile(pdf, "application/pdf", "RelatorioVeiculos");
+                }));
+        };
     }
 
 })();

@@ -42,6 +42,10 @@
         this.todos = function () {
             return ApiRequest.json("/Veiculos/Todos");
         }
+
+        this.relatorioVeiculos = function () {
+            return ApiRequest.download("/Veiculos/RelatorioVeiculos", filtro);
+        }
     }
 
 })();

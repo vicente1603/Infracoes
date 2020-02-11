@@ -7,12 +7,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Infracoes.Models.DataModel.Dbo.Queries;
-using Infracoes.Extensions;
 using Infracoes.Models.ViewModel.Dbo.Veiculos;
 using Infracoes.Models.ViewModel.Dbo.Modelo;
 using System.Data.Entity;
-
-
+using Ssp.Framework.Api.Extensions;
 
 namespace Infracoes.Controllers.Dbo
 {
@@ -100,7 +98,7 @@ namespace Infracoes.Controllers.Dbo
                     .Include(v => v.Modelo)
                     .Include(v => v.Infracoes)
                     .Include(v => v.Proprietario)
-                    .OrderBy(v => v.Placa);
+                    .OrderBy(v => v.IdVeiculo);
 
 
                 ICollection<Veiculo> veiculos = veiculosQuery
@@ -173,6 +171,46 @@ namespace Infracoes.Controllers.Dbo
                 db.Salvar();
 
                 return this.Message("Veiculo removido com sucesso");
+            }
+        }
+
+        public ActionResult RelatorioVeiculos(VeiculosCadastradosRelatorioViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return this.ModelErrors();
+
+            RelatorioVeiculosViewModel relatorioVeiculos = new RelatorioVeiculosViewModel();
+
+            using (DbApplication db = new DbApplication())
+            {
+                IQueryable<Veiculo> veiculosQuery = db
+                    .Veiculos
+                    .Include(m => m.Modelo)
+                    .Include(p => p.Proprietario)
+                    .Include(i => i.Infracoes)
+                    .OndePlacaContem(viewModel.Placa)
+                    .OrderBy(a => a.IdVeiculo);
+
+                ICollection<Veiculo> veiculos = veiculosQuery
+                    .ToList();
+
+                relatorioVeiculos.TotalVeiculos = veiculos.Count;
+
+                relatorioVeiculos.Veiculos = new List<RelatorioVeiculosViewModel.Veiculo>();
+
+                foreach (Veiculo veiculo in veiculos)
+                {
+                    relatorioVeiculos.Veiculos.Add(new RelatorioVeiculosViewModel.Veiculo
+                    {
+                        Placa = veiculo.Placa,
+                        Uf = veiculo.Uf,
+                        Infracao = veiculo.IdInfracao == 0 ? 0 : (int) veiculo.IdInfracao,
+                        Modelo = veiculo.Modelo.Descricao,
+                        Proprietario = veiculo.Proprietario.CpfProprietario
+
+                    });
+                }
+                return this.PdfView("~/Relatorios/Veiculos/RelatorioVeiculos.cshtml", relatorioVeiculos);
             }
         }
 
