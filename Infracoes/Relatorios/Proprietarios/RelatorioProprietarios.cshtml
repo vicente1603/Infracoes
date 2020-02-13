@@ -1,6 +1,6 @@
-﻿@using Infracoes.Models.ViewModel.Dbo.Agentes
+﻿@using Infracoes.Models.ViewModel.Dbo.Proprietarios
 
-@model RelatorioAgentesViewModel
+@model RelatorioProprietariosViewModel
 
 <style type="text/css">
     table {
@@ -41,19 +41,19 @@
 
 <table class="sembordas" style="margin-bottom:30px">
     <tr>
-        <td style="text-align:center; font-size: 15pt"> RELATÓRIO DE AGENTES </td>
+        <td style="text-align:center; font-size: 15pt"> RELATÓRIO DE PROPRIETÁRIOS </td>
     </tr>
 </table>
 
 <table class="sembordas" style="margin-top:20px;padding-top:10px; font-size:12pt">
     <tr style="text-align:center">
-        <th>Agentes</th>
+        <th>Proprietários</th>
     </tr>
 </table>
 
 <table class="sembordas">
     <tr>
-        <td style="width: 180px; font-weight:bold">Quantidade de agentes: @Model.TotalAgentes</td>
+        <td style="width: 180px; font-weight:bold">Quantidade de proprietários: @Model.TotalProprietarios</td>
     </tr>
 </table>
 
@@ -61,19 +61,19 @@
     <thead>
         <tr>
             <th>Nome</th>
-            <th>Matrícula</th>
-            <th>Data de Efetivação</th>
-            <th>Tempo de Serviço (Meses)</th>
+            <th>Cpf</th>
+            <th>Data de Nascimento	</th>
+            <th>Telefone</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (RelatorioAgentesViewModel.Agente agente in @Model.Agentes)
+        @foreach (RelatorioProprietariosViewModel.Proprietario proprietario in @Model.Proprietarios)
         {
             <tr>
-                <td>@agente.Nome</td>
-                <td>@agente.Matricula</td>
-                <td>@agente.DataEfetivacao</td>
-                <td>@agente.TempoServico</td>
+                <td>@proprietario.NomeProprietario</td>
+                <td>@proprietario.CpfProprietario</td>
+                <td>@proprietario.DataNascimento</td>
+                <td>@proprietario.Telefone</td>
             </tr>
         }
     </tbody>

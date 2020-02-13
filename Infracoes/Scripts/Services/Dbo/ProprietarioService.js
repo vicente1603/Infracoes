@@ -44,5 +44,9 @@
         this.todos = function () {
             return ApiRequest.json("/Proprietarios/Todos");
         }
+
+        this.relatorioProprietarios = function () {
+            return ApiRequest.download("/Proprietarios/RelatorioProprietarios", filtro);
+        }
     }
 })();

@@ -1,95 +1,90 @@
 ﻿@model Infracoes.Models.Usuario
 
-    @{
-        Layout = null;
-    }
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Login no Sistema</title>
-        <style>
-            #login-div {
-                margin-top: 20%;
-                margin-left: 30%;
-                position: absolute;
-            }
-            .fiel-validation-error{
-                color:red;
-            }
-        </style>
-        <link rel="shortcut icon" href="@Url.Content("~/Content/img/ssp.ico")" />
-        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor.min.css")" />
-        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/Custom.css")" />
-        @Styles.Render("~/Styles/ssp-css")
-        <!--[if lte IE 9]>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login no Sistema</title>
+    <style>
+        #login-div {
+            margin-top: 20%;
+            margin-left: 30%;
+            position: absolute;
+        }
+
+        .fiel-validation-error {
+            color: red;
+        }
+    </style>
+    <link rel="shortcut icon" href="@Url.Content("~/Content/img/ssp.ico")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/vendor.min.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/Custom.css")" />
+    @Styles.Render("~/Styles/ssp-css")
+    <!--[if lte IE 9]>
         <script type="text/javascript" src="@Url.Content("~/Scripts/html5shiv.min.js")"></script>
         <script type="text/javascript" src="@Url.Content("~/Scripts/respond.min.js")"></script>
     <![endif]-->
-    
-    </head>
-    <body>
-        <div id="login-div">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class=" panel panel-primary">
-                        <div class="panel-heading text-center">
-                            Entrar no Sistema de Infrações
-                        </div>
-                        <div class="panel-body text-center">
-                            <h1>SISTEMA DE GESTÃO DE INFRAÇÕES</h1>
-                        </div>
-                        <div class="panel-body text-center form-group">
-                            @using (Html.BeginForm("Autorizar", "Login", FormMethod.Post))
-                            {
-                                <table align="center">
-                                    <tr>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            @Html.LabelFor(model => model.Nome) &nbsp;
-                                        </td>
-                                        <td>
-                                            @Html.EditorFor(model => model.Nome)
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>@Html.ValidationMessageFor(model => model.Senha)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            @Html.LabelFor(model => model.Senha)
-                                        </td>
-                                        <td>
-                                            @Html.PasswordFor(model => model.Senha)
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>@Html.ValidationMessageFor(model => model.Senha)</td>
-                                    </tr>
-                                    <tr>
-                                        <td colspan="2">
-                                            <label class="fiel-validation-error">@Html.DisplayFor(model => model.MessagemErroLogin)</label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>
-                                            <button type="submit" class="btn btn-primary">Entrar</button>
-                                            <button type="reset" class="btn btn-warning">Limpar</button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+</head>
+<body>
+
+    <div class=" panel panel-primary">
+        <div class="panel-heading text-center">
+            Entrar no Sistema de Infrações
         </div>
-            @Scripts.Render("~/Scripts/jquery-3.3.1.min.js")
-            @Scripts.Render("~/Scripts/jquery.validate.min.js")
-    </body>
-    </html>
+        <br />
+        <div class="panel-body text-center">
+            <h1>SISTEMA DE GESTÃO DE INFRAÇÕES</h1>
+        </div>
+        <br />
+        <div class="panel-body text-center form-group">
+            @using (Html.BeginForm("Autorizar", "Login", FormMethod.Post))
+            {
+                <table align="center">
+                    <tr>
+                        <td style="font-size: 25px">
+                            @Html.LabelFor(model => model.Nome) &nbsp;
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.Nome)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.Senha)</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 25px">
+                            @Html.LabelFor(model => model.Senha)
+                        </td>
+                        <td>
+                            @Html.PasswordFor(model => model.Senha)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.Senha)</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label class="fiel-validation-error">@Html.DisplayFor(model => model.MessagemErroLogin)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="submit" class="btn btn-primary">Entrar</button>
+                            <button type="reset" class="btn btn-warning">Limpar</button>
+                        </td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </div>
+    @Scripts.Render("~/Scripts/jquery-3.3.1.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")
+</body>
+</html>

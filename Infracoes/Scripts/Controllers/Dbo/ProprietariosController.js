@@ -1,10 +1,12 @@
 ﻿(function () {
     angular.module("app").controller("ProprietariosController", [
         "Proprietario",
+        "Buffer",
+        "$scope",
         ProprietariosController
     ]);
 
-    function ProprietariosController(Proprietario) {
+    function ProprietariosController(Proprietario, Buffer, $scope) {
 
         var _self = this;
 
@@ -122,6 +124,17 @@
             _self.modal.limparMensagens();
             _self.proprietario = angular.copy(proprietario);
         }
+
+        _self.gerarRelatorio = function () {
+
+            Proprietario
+                .cadastrados()
+                .ContemCpf(_self.filtro.dados.cpf)
+                .relatorioProprietarios()
+                .success(angular.bind(this, function (pdf) {
+                    Buffer.saveToFile(pdf, "application/pdf", "RelatorioProprietarios");
+                }));
+        };
     }
 
 })();

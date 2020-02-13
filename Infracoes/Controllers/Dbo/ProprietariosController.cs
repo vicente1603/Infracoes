@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Infracoes.Extensions;
 using Infracoes.Models.DataModel;
 using Infracoes.Models.DomainModel.Dbo;
 using Infracoes.Models.DataModel.Dbo.Queries;
 using System.Collections;
 using Infracoes.Models.ViewModel.Dbo.Veiculos;
+using Ssp.Framework.Api.Extensions;
 using System.Data.Entity;
 
 
@@ -162,6 +162,41 @@ namespace Infracoes.Controllers.Dbo
                 db.Salvar();
 
                 return this.Message("Proprietário removido com sucesso.");
+            }
+        }
+
+        public ActionResult RelatorioProprietarios(ProprietariosCadastradosRelatorioViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return this.ModelErrors();
+
+            RelatorioProprietariosViewModel relatorioProprietarios = new RelatorioProprietariosViewModel();
+
+            using (DbApplication db = new DbApplication())
+            {
+                IQueryable<Proprietario> proprietariosQuery = db
+                    .Proprietarios
+                    .ContemCpf(viewModel.CpfProprietario)
+                    .OrderBy(a => a.IdProprietario);
+
+                ICollection<Proprietario> proprietarios = proprietariosQuery
+                    .ToList();
+
+                relatorioProprietarios.TotalProprietarios = proprietarios.Count;
+
+                relatorioProprietarios.Proprietarios = new List<RelatorioProprietariosViewModel.Proprietario>();
+
+                foreach (Proprietario proprietario in proprietarios)
+                {
+                    relatorioProprietarios.Proprietarios.Add(new RelatorioProprietariosViewModel.Proprietario
+                    {
+                        NomeProprietario = proprietario.NomeProprietario,
+                        CpfProprietario = proprietario.CpfProprietario,
+                        Telefone = proprietario.Telefone,    
+                        DataNascimento = proprietario.DataNascimento.ToString("dd/MM/yyyy")
+                    });
+                }
+                return this.PdfView("~/Relatorios/Proprietarios/RelatorioProprietarios.cshtml", relatorioProprietarios);
             }
         }
 
