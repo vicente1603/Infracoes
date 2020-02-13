@@ -317,8 +317,6 @@
     <Content Include="Content\img\carregando.gif" />
     <Content Include="Content\img\doc-word-image.png" />
     <Content Include="Content\img\pdf-image.png" />
-    <Content Include="Content\img\ssp-logo-sem-descricao.png" />
-    <Content Include="Content\img\ssp-logo-sm.png" />
     <Content Include="Content\img\xls-excel-image.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
